@@ -25,8 +25,8 @@
 			It is close to all of Galways amenities and activities - beaches, golf courses, swimming pool, horseriding to name a few!
 			It is also an ideal location for touring Connemara, the Aran Islands, The Burren and the beautiful Salthill beach.
 		</p>
-		<img id="houseImg" src="../Content/caImages/lg/home2.jpg" width="600" height="325" alt="House"
-			onmouseover="this.src = '../Content/caImages/lg/patio.jpg'" onmouseout="this.src ='../Content/caImages/lg/home2.jpg'">
+		<img runat ="server" id="houseImg" src="~/Content/caImages/lg/home2.jpg" width="600" height="325" alt="House"
+			onmouseover="this.src = '~/Content/caImages/lg/patio.jpg'" onmouseout="this.src ='~/Content/caImages/lg/home2.jpg'">
 		<p>
 			All bedrooms at Ellen's contain en-suite facilities and are comfortable, spacious and beautifully decorated with earthy tones,
 			which adds to the relaxing vibe. We can offer a variety of room types to accommodate guests travelling together, in groups, with family, or in couples.

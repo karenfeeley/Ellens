@@ -20,7 +20,7 @@
 			So make sure you see at least a few of these places on your next visit.
 		</p>
 		<hr>
-		<img src="../Content/caImages/tn/GO_aran_islands.jpg" width="160" height="117" class="floatleft" alt="Aran Islands">
+		<img runat="server" src="~/Content/caImages/tn/GO_aran_islands.jpg" width="160" height="117" class="floatleft" alt="Aran Islands">
 		<p>
 			<strong>The Aran Islands</strong> are located about 48km (30 miles) from the mouth of Galway Bay.  
 			Inishmore (or Inis Mór) is the largest of the three islands which measures just 14km (9 miles) in length and 4.8km (3 miles) at its widest point.  
@@ -28,7 +28,7 @@
 			that is one of best examples of this type of fort in all of Europe.
 		</p>
 		<hr>
-		<img src="../Content/caImages/tn/GO_cliffsofmoher.jpg" width="160" height="117" class="floatright" alt="Cliffs of Moher">
+		<img runat="server" src="~/Content/caImages/tn/GO_cliffsofmoher.jpg" width="160" height="117" class="floatright" alt="Cliffs of Moher">
 		<p>
 			<strong>The Cliffs of Moher</strong> are one of Ireland's most visited tourist attractions.  
 			Situated in North-West Clare between the villages of Liscannor and Doolin, the Cliffs of Moher are one 
@@ -37,7 +37,7 @@
 
 		</p>
 		<hr>
-		<img src="../Content/caImages/tn/GO_the_burren.jpg" width="160" height="117" class="floatleft" alt="The Burren">
+		<img runat="server" src="~/Content/caImages/tn/GO_the_burren.jpg" width="160" height="117" class="floatleft" alt="The Burren">
 		<p>
 			<strong>The Burren</strong>, in County Clare is a barren place, famous for its unique rock formations and exceptional 
 			diversity of flora and fauna. There are also large number of historic sites contained within The Burren, making it a popular 
@@ -45,7 +45,7 @@
 			corner of Ireland such an attraction. 
 		</p>
 		<hr>
-		<img src="../Content/caImages/tn/GO_connemara.jpg" width="160" height="117" class="floatright" alt="Connemara">
+		<img runat="server" src="~/Content/caImages/tn/GO_connemara.jpg" width="160" height="117" class="floatright" alt="Connemara">
 		<p>
 			The distinct region of <strong>Connemara</strong> is located in the north west corner of County Galway.  
 			Connemara's breathtaking landscape is a mixture of unspoilt rivers, lakes, woodlands, rich meadowlands, rugged hills, 
@@ -54,7 +54,7 @@
 			It has lots of quirky shops, restaurants and traditional Irish pubs to explore. 
 		</p>
 		<hr>
-		<img src="../Content/caImages/tn/GO_kylemoreAbbey.jpg" width="160" height="117" class="floatleft" alt="Kylemore Abbey">
+		<img runat="server" src="~/Content/caImages/tn/GO_kylemoreAbbey.jpg" width="160" height="117" class="floatleft" alt="Kylemore Abbey">
 		<p>
 			<strong>Kylemore Abbey </strong>A trip to the West of Ireland is not complete without experiencing the beauty and tranquility 
 			of Kylemore Abbey and Gardens. It has an abundance of nature trails, woodland and a beautiful walled garden that will bring you back 
@@ -62,7 +62,7 @@
 			which takes the visitor through the history of the house and its occupants. 
 		</p>
 		<hr>
-		<img src="../Content/caImages/tn/GO_Dungaire_Castle.jpg" width="160" height="117" class="floatright" alt="Dunguarire Castle">
+		<img runat="server" src="~/Content/caImages/tn/GO_Dungaire_Castle.jpg" width="160" height="117" class="floatright" alt="Dunguarire Castle">
 		<p>
 			<strong>Dunguaire Castle </strong> is a magnificent 16th century castle overlooking the village of Kinvara and Galway Bay.  
 			From Apr - Sep the castle comes alive with medieval banquets &amp; performances. Part of the lore is that the Lord of the castle 
@@ -100,7 +100,7 @@
 			</ul>
 		</aside>
 		<p>
-			<img src="../Content/caImages/lg/GO_signs.jpg" width="200" height="300" alt="Road Signs">
+			<img runat="server" src="~/Content/caImages/lg/GO_signs.jpg" width="200" height="300" alt="Road Signs">
 		</p>
 
 	</div> <!--end of right column-->

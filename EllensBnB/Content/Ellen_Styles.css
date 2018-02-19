@@ -443,6 +443,7 @@ input.booking[type=reset] {
 input.search[type=search] {	width:70%;
 							padding:4px;
 							margin: 30px 0px 10px 30px;}
+
 input.search[type=submit] {	 background-color: #4d88ff;
 							color: white;
 							padding: 4px 4px;
@@ -452,6 +453,10 @@ input.search[type=submit] {	 background-color: #4d88ff;
 							margin:0px 5px 0px 10px;
 							border: 1px solid #ffffff;
 							box-shadow:1px 1px 1px #000066;}
+
+
+
+
 						
 
 /*Google Map styling*/
@@ -522,3 +527,5 @@ label.field	{font-weight:bold;
 	}
 }			
 
+.bookingOption {
+}

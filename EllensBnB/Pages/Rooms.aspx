@@ -74,39 +74,39 @@
 		<div id="gallery">
 			<ul>
 				<li>
-					<a target="_blank" href="../Content/caImages/lg/R_single_room.jpg">
+					<a target="_blank" runat="server" href="~/Content/caImages/lg/R_single_room.jpg">
 						<figcaption>The Tara Suite</figcaption>
-						<img class="rmImg" src="../Content/caImages/tn/R_single_room.jpg" width="175" height="125">
+						<img class="rmImg" runat="server" src="~/Content/caImages/tn/R_single_room.jpg" width="175" height="125">
 					</a>
 				</li>
 				<li>
-					<a target="_blank" href="../Content/caImages/lg/R_twin_room.jpg">
+					<a target="_blank" runat="server" href="~/Content/caImages/lg/R_twin_room.jpg">
 						<figcaption>The Lir Suite</figcaption>
-						<img class="rmImg" src="../Content/caImages/tn/R_twin_room.jpg" width="175" height="125"/>
+						<img class="rmImg" runat="server" src="~/Content/caImages/tn/R_twin_room.jpg" width="175" height="125"/>
 					</a>
 				</li>
 				<li>
-					<a target="_blank" href="../Content/caImages/lg/R_triple_room.jpg">
+					<a target="_blank" runat="server" href="~/Content/caImages/lg/R_triple_room.jpg">
 						<figcaption>The Boyne Suite</figcaption>
-						<img class="rmImg" src="../Content/caImages/tn/R_triple_room.jpg" width="175" height="125">
+						<img class="rmImg" runat="server" src="~/Content/caImages/tn/R_triple_room.jpg" width="175" height="125">
 					</a>
 				</li>
 				<li>
-					<a target="_blank" href="../Content/caImages/lg/R_family_room.jpg">
+					<a target="_blank" runat="server" href="~/Content/caImages/lg/R_family_room.jpg">
 						<figcaption>The Kells Suite</figcaption>
-						<img class="rmImg" src="../Content/caImages/tn/R_family_room.jpg" width="175" height="125">
+						<img class="rmImg" runat="server" src="~/Content/caImages/tn/R_family_room.jpg" width="175" height="125">
 					</a>
 				</li>
 				<li>
-					<a target="_blank" href="../Content/caImages/lg/R_Bathroom.jpg">
+					<a target="_blank" runat="server" href="~/Content/caImages/lg/R_Bathroom.jpg">
 						<figcaption>Bathroom</figcaption>
-						<img class="rmImg" src="../Content/caImages/tn/R_Bathroom.jpg" width="175" height="125">
+						<img class="rmImg" runat="server" src="~/Content/caImages/tn/R_Bathroom.jpg" width="175" height="125">
 					</a>
 				</li>
 				<li>
-					<a target="_blank" href="../Content/caImages/lg/R_Entrance_Hall.jpg">
+					<a target="_blank" runat="server" href="~/Content/caImages/lg/R_Entrance_Hall.jpg">
 						<figcaption>Entrance Hall</figcaption>
-						<img class="rmImg" src="../Content/caImages/tn/R_Entrance_Hall.jpg" width="175" height="125">
+						<img class="rmImg" runat="server" src="~/Content/caImages/tn/R_Entrance_Hall.jpg" width="175" height="125">
 					</a>
 				</li>
 			</ul>
@@ -185,7 +185,7 @@
 			</ul>
 		</aside>
 		<p>
-			<img src="../Content/caImages/tn/tripadvisor2016.jpg" width="200" height="150" alt="Trip Advisor Cert 2016">
+			<img runat="server" src="~/Content/caImages/tn/tripadvisor2016.jpg" width="200" height="150" alt="Trip Advisor Cert 2016">
 		</p>
 	</div>
 </asp:Content>

@@ -7,10 +7,10 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 	<div>
-		<h1><a href ="/Pages/GalwayCity.aspx" style="display:block">Galway City</a></h1>
+		<h1><a runat="server" href ="~/Pages/GalwayCity.aspx" style="display:block">Galway City</a></h1>
 	</div>
 	<div>
-		<h1><a href = "/Pages/GalwayOther.aspx" style="display:block">Other nearby attractions</a></h1>
+		<h1><a runat="server" href = "~/Pages/GalwayOther.aspx" style="display:block">Other nearby attractions</a></h1>
 	</div>
 
 </asp:Content>

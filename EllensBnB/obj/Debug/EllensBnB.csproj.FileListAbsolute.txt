@@ -72,3 +72,40 @@ C:\Users\Gord\A_Web_App_Projects\BnBFebVersion\WebDevCA-master\WebDevCA-master\E
 C:\Users\Gord\A_Web_App_Projects\BnBFebVersion\WebDevCA-master\WebDevCA-master\EllensBnB\Ellens\EllensBnB\obj\Debug\EllensBnB.csproj.CoreCompileInputs.cache
 C:\Users\Gord\A_Web_App_Projects\BnBFebVersion\WebDevCA-master\WebDevCA-master\EllensBnB\Ellens\EllensBnB\obj\Debug\EllensBnB.dll
 C:\Users\Gord\A_Web_App_Projects\BnBFebVersion\WebDevCA-master\WebDevCA-master\EllensBnB\Ellens\EllensBnB\obj\Debug\EllensBnB.pdb
+C:\Users\carra\Documents\Web Development\Ellens\EllensBnB\bin\ApplicationInsights.config
+C:\Users\carra\Documents\Web Development\Ellens\EllensBnB\bin\EllensBnB.dll.config
+C:\Users\carra\Documents\Web Development\Ellens\EllensBnB\bin\EllensBnB.dll
+C:\Users\carra\Documents\Web Development\Ellens\EllensBnB\bin\EllensBnB.pdb
+C:\Users\carra\Documents\Web Development\Ellens\EllensBnB\bin\Antlr3.Runtime.dll
+C:\Users\carra\Documents\Web Development\Ellens\EllensBnB\bin\AspNet.ScriptManager.bootstrap.dll
+C:\Users\carra\Documents\Web Development\Ellens\EllensBnB\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\carra\Documents\Web Development\Ellens\EllensBnB\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\carra\Documents\Web Development\Ellens\EllensBnB\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\carra\Documents\Web Development\Ellens\EllensBnB\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\carra\Documents\Web Development\Ellens\EllensBnB\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\carra\Documents\Web Development\Ellens\EllensBnB\bin\Microsoft.AI.Web.dll
+C:\Users\carra\Documents\Web Development\Ellens\EllensBnB\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\carra\Documents\Web Development\Ellens\EllensBnB\bin\Microsoft.ApplicationInsights.dll
+C:\Users\carra\Documents\Web Development\Ellens\EllensBnB\bin\Microsoft.AspNet.FriendlyUrls.dll
+C:\Users\carra\Documents\Web Development\Ellens\EllensBnB\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+C:\Users\carra\Documents\Web Development\Ellens\EllensBnB\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\carra\Documents\Web Development\Ellens\EllensBnB\bin\Microsoft.ScriptManager.MSAjax.dll
+C:\Users\carra\Documents\Web Development\Ellens\EllensBnB\bin\Microsoft.ScriptManager.WebForms.dll
+C:\Users\carra\Documents\Web Development\Ellens\EllensBnB\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\carra\Documents\Web Development\Ellens\EllensBnB\bin\Newtonsoft.Json.dll
+C:\Users\carra\Documents\Web Development\Ellens\EllensBnB\bin\System.Web.Optimization.dll
+C:\Users\carra\Documents\Web Development\Ellens\EllensBnB\bin\WebGrease.dll
+C:\Users\carra\Documents\Web Development\Ellens\EllensBnB\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\carra\Documents\Web Development\Ellens\EllensBnB\bin\System.Web.Optimization.xml
+C:\Users\carra\Documents\Web Development\Ellens\EllensBnB\bin\Antlr3.Runtime.pdb
+C:\Users\carra\Documents\Web Development\Ellens\EllensBnB\bin\Microsoft.AspNet.FriendlyUrls.xml
+C:\Users\carra\Documents\Web Development\Ellens\EllensBnB\bin\Newtonsoft.Json.xml
+C:\Users\carra\Documents\Web Development\Ellens\EllensBnB\bin\Microsoft.ApplicationInsights.xml
+C:\Users\carra\Documents\Web Development\Ellens\EllensBnB\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\carra\Documents\Web Development\Ellens\EllensBnB\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\carra\Documents\Web Development\Ellens\EllensBnB\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\carra\Documents\Web Development\Ellens\EllensBnB\bin\Microsoft.AI.Web.xml
+C:\Users\carra\Documents\Web Development\Ellens\EllensBnB\obj\Debug\EllensBnB.csprojResolveAssemblyReference.cache
+C:\Users\carra\Documents\Web Development\Ellens\EllensBnB\obj\Debug\EllensBnB.csproj.CoreCompileInputs.cache
+C:\Users\carra\Documents\Web Development\Ellens\EllensBnB\obj\Debug\EllensBnB.dll
+C:\Users\carra\Documents\Web Development\Ellens\EllensBnB\obj\Debug\EllensBnB.pdb

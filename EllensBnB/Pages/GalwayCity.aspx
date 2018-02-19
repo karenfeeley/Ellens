@@ -15,7 +15,7 @@
 		<h4><em>Sightseeing tours can be booked with Ellen's B&amp;B at a discount.</em></h4>
 		<h4>Galway City Sights</h4>
 		<hr>
-		<img src="../Content/caImages/tn/GC_galway_city_tours.jpg" width="160" height="117" class="floatleft" alt="Bus Hopon Hopoff">
+		<img runat="server" src="~/Content/caImages/tn/GC_galway_city_tours.jpg" width="160" height="117" class="floatleft" alt="Bus Hopon Hopoff">
 		<p>
 			<strong>Hop-on, Hop-off</strong> sightseeing tours of Galway City with <a target="_blank" href="http://lallytours.com/shop/g-gct/">Lally Tours.</a>
 			Explore Galway with their friendly, knowledgeable guides to learn about this colourful city and see it from the best perspective, 
@@ -24,14 +24,14 @@
 			Square &amp; Salthill, you can explore our favourite city.
 		</p>
 		<hr>
-		<img src="../Content/caImages/tn/GC_eyre_square.jpg" width="160" height="117" class="floatright" alt="Eyre Square">
+		<img runat="server" src="~/Content/caImages/tn/GC_eyre_square.jpg" width="160" height="117" class="floatright" alt="Eyre Square">
 		<p>
 			<strong>Eyre Square</strong> is the centre piece to Galway City and over the years has been previously renamed in 1965, the "Kennedy Memorial Park"
 			in honour of US President John F. Kennedy, who visited here shortly before his assassination in 1963. The park features the Quincentennial 
 			fountain (1984) which is a representation of the Galway Hooker, which is a traditional fishing boat unique to Galway.  
 		</p>
 		<hr>
-		<img src="../Content/caImages/tn/GC_claddagh.jpg" width="160" height="117" class="floatleft" alt="the Claddagh">
+		<img runat="server" src="~/Content/caImages/tn/GC_claddagh.jpg" width="160" height="117" class="floatleft" alt="the Claddagh">
 		<p>
 			<strong>The Claddagh</strong> The name of the Claddagh area is based on the Irish word "cladach", meaning a stony beach.  
 			Legend has it that this area was most famous for the Claddagh ring, which was created by jeweller, Richard Joyce.  
@@ -41,7 +41,7 @@
 		<hr>
 		<h4><em>Other Activities</em></h4>
 		<hr>
-		<img src="../Content/caImages/tn/GC_golf.jpg" width="160" height="117" class="floatright" alt="Golf Course">
+		<img runat="server" src="~/Content/caImages/tn/GC_golf.jpg" width="160" height="117" class="floatright" alt="Golf Course">
 		<p>
 			<strong>Golf Courses</strong> Ireland's West is littered with championship courses and challenging links 
 			in some of Ireland's most beautiful landscapes as well as a range of nine hole courses where locals play all year round.  
@@ -49,7 +49,7 @@
 			<a target="_blank" href="http://www.galwaygolf.com/">GalwayGolf</a> and <a target="_blank" href="http://www.galwaybaygolfresort.com/">GalwayBayResort</a> are two clubs located nearby.
 		</p>
 		<hr>
-		<img src="../Content/caImages/tn/GC_Horseriding.jpg" width="160" height="117" class="floatleft" alt="Horse Riding">
+		<img runat="server" src="~/Content/caImages/tn/GC_Horseriding.jpg" width="160" height="117" class="floatleft" alt="Horse Riding">
 		<p>
 			<strong>Horse Riding</strong> The <a target="_blank" href="http://www.clegganridingcentre.com/">Cleggan Beach Riding Centre</a>
 			is Ireland’s premier horse riding holiday experience. Located in a beautiful seaside setting in Cleggan, Connemara,
@@ -57,7 +57,7 @@
 			or trek along the beach to Omey island. A vacation on the Wild Atlantic Way should definitely include this amazing experience.
 		</p>
 		<hr>
-		<img src="../Content/caImages/tn/GC_seafishing.jpg" width="160" height="117" class="floatright" alt="the Claddagh">
+		<img runat="server" src="~/Content/caImages/tn/GC_seafishing.jpg" width="160" height="117" class="floatright" alt="the Claddagh">
 		<p>
 			<strong>Angling </strong>With so many lakes, sea inlets and rivers, County Galway is an angler’s paradise.	
 			Fishing in Galway is a wonderful experience; peaceful surroundings, majestic mountain ranges and stunning seascapes…what more could you ask for?  
@@ -94,7 +94,7 @@
 			</ul>
 		</aside>
 		<p>
-			<img src="../Content/caImages/tn/GC_hookers.jpg" width="210" height="180" alt="Hookers">
+			<img runat="server" src="~/Content/caImages/tn/GC_hookers.jpg" width="210" height="180" alt="Hookers">
 		</p>
 		<aside>
 			<h4>June 2017</h4>
