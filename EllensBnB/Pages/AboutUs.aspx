@@ -14,7 +14,7 @@
 		<h2>About Ellen's Bed and Breakfast Galway City</h2>
 		<h4>First off we would like to thank you for viewing our website.  
 			If you have any questions or would like to make a booking, feel free
-			to <a href="../Pages/Ellen_ContactUs.html">contact us</a> any time.</h4>
+			to <a href="../Pages/ContactUs.aspx">contact us</a> any time.</h4>
 		<p>
 			Ellen's Bed and Breakfast in Galway is a family run, recently refurbished accommodation and is set close to the heart
 			of the world famous tourist centre of Galway, Ireland. We invite you to come and stay with us in

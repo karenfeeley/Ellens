@@ -57,7 +57,7 @@
 			</dd>
 			<dt><strong>Your question is not answered?</strong></dt>
 			<dd>
-				Please <a href="Ellen_ContactUs.html">contact us</a> by email or phone, we are here to help.
+				Please <a href="../Pages/ContactUs.aspx">contact us</a> by email or phone, we are here to help.
 			</dd>
 		</dl>
 
