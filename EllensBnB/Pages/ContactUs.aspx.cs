@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-using System.Data.SqlClient;
+using System.Data.SqlClient;    //  this is needed  !!!
 using System.Data;              //  this is needed  !!!
 
 namespace EllensBnB.Pages
@@ -36,8 +36,9 @@ namespace EllensBnB.Pages
 		{
 
 
-            string connectionString = "Server = tcp:gordserver1.database.windows.net,1433;Initial Catalog = TestForWebCA_2; Integrated Security=False;Persist Security Info=False;User ID = gordserver1admin; Password=HelpMeOut!;";
-
+            //string connectionString = "Server = tcp:gordserver1.database.windows.net,1433;Initial Catalog = TestForWebCA_2; Integrated Security=False;Persist Security Info=False;User ID = gordserver1admin; Password=HelpMeOut!;";
+            //new azure connectionstring
+            string connectionString = "Server = tcp:karensserver.database.windows.net,1433; Initial Catalog = EllensBnB; Persist Security Info = False; User ID = ellenadminlogin; Password =PCEc2018; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30;";
 
 
 
