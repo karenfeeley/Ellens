@@ -10,7 +10,8 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-	<div role="main" id="leftcol">
+	<button onclick="topFunction()" id="topBtn" title="Go to top">Top</button>
+    <div role="main" id="leftcol">
 		<h2>About Ellen's Bed and Breakfast Galway City</h2>
 		<h4>First off we would like to thank you for viewing our website.  
 			If you have any questions or would like to make a booking, feel free

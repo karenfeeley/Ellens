@@ -6,7 +6,8 @@
 	<meta name = "viewport" content = "width = device-width, initial-scale = 1.0"/>        
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-	<div>
+	<button onclick="topFunction()" id="topBtn" title="Go to top">Top</button>
+    <div>
 		<h1><a runat="server" href ="~/Pages/GalwayCity.aspx" style="display:block">Galway City</a></h1>
 	</div>
 	<div>

@@ -12,7 +12,8 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-	<div role ="main" id="leftcol">
+	<button onclick="topFunction()" id="topBtn" title="Go to top">Top</button>
+    <div role ="main" id="leftcol">
 		<div class="bookingOption">
 			<asp:Button ID="SelectMakeBooking" runat="server" Text="Make New Reservation" CssClass="bookingOption" OnClick="SelectMakeBooking_Click" />
 			<asp:Button ID="SelectExistingBooking" runat="server" Text="Update Existing Reservation" CssClass ="bookingOption" OnClick="SelectExistingBooking_Click"/>

@@ -11,7 +11,8 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-	<div role="main" class="slideshow-container">
+	<button onclick="topFunction()" id="topBtn" title="Go to top">Top</button>
+    <div role="main" class="slideshow-container">
 		<div class="mySlides fade">
 			<div class="numbertext">1 / 5</div>
 			<img src="../Content/caImages/lg/IS_Restaurants.jpg" style="width:100%" alt="Galway City Restaurants">
