@@ -108,3 +108,21 @@ C:\Users\Admin\Documents\10 Web_Cloud_Dev\WebDevCA\Ellens\EllensBnB\obj\Debug\El
 C:\Users\Admin\Documents\10 Web_Cloud_Dev\WebDevCA\Ellens\EllensBnB\obj\Debug\EllensBnB.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Documents\10 Web_Cloud_Dev\WebDevCA\Ellens\EllensBnB\obj\Debug\EllensBnB.dll
 C:\Users\Admin\Documents\10 Web_Cloud_Dev\WebDevCA\Ellens\EllensBnB\obj\Debug\EllensBnB.pdb
+C:\Users\Gord\A_Web_App_Projects\Ellens\EllensBnB\bin\ApplicationInsights.config
+C:\Users\Gord\A_Web_App_Projects\Ellens\EllensBnB\bin\EllensBnB.dll.config
+C:\Users\Gord\A_Web_App_Projects\Ellens\EllensBnB\bin\EllensBnB.dll
+C:\Users\Gord\A_Web_App_Projects\Ellens\EllensBnB\bin\EllensBnB.pdb
+C:\Users\Gord\A_Web_App_Projects\Ellens\EllensBnB\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Gord\A_Web_App_Projects\Ellens\EllensBnB\bin\System.Web.Optimization.xml
+C:\Users\Gord\A_Web_App_Projects\Ellens\EllensBnB\bin\Antlr3.Runtime.pdb
+C:\Users\Gord\A_Web_App_Projects\Ellens\EllensBnB\bin\Microsoft.AspNet.FriendlyUrls.xml
+C:\Users\Gord\A_Web_App_Projects\Ellens\EllensBnB\bin\Newtonsoft.Json.xml
+C:\Users\Gord\A_Web_App_Projects\Ellens\EllensBnB\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Gord\A_Web_App_Projects\Ellens\EllensBnB\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Gord\A_Web_App_Projects\Ellens\EllensBnB\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Gord\A_Web_App_Projects\Ellens\EllensBnB\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Gord\A_Web_App_Projects\Ellens\EllensBnB\bin\Microsoft.AI.Web.xml
+C:\Users\Gord\A_Web_App_Projects\Ellens\EllensBnB\obj\Debug\EllensBnB.csprojResolveAssemblyReference.cache
+C:\Users\Gord\A_Web_App_Projects\Ellens\EllensBnB\obj\Debug\EllensBnB.csproj.CoreCompileInputs.cache
+C:\Users\Gord\A_Web_App_Projects\Ellens\EllensBnB\obj\Debug\EllensBnB.dll
+C:\Users\Gord\A_Web_App_Projects\Ellens\EllensBnB\obj\Debug\EllensBnB.pdb
