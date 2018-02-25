@@ -42,8 +42,10 @@ namespace EllensBnB.Pages
 
 
 
-            string dbName = "SATURDAY - SATURDAY Test Name";
-            string dbEmail = "SATURDAY SATURDAY  Test Email"; 
+            string customerName = "PCE Consulting";
+            string customerCountry = "Uraguay";
+            string customerEmail = "happydays@gmail.com";
+            string customerPhone = "0012345656";
             
 
             // Insert basic customer info into database           
@@ -51,18 +53,29 @@ namespace EllensBnB.Pages
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
 
-                using (SqlCommand sqlCommand = new SqlCommand("uspInsertCustomer_No_1", conn))
+                using (SqlCommand sqlCommand = new SqlCommand("uspCreateNewCustomer", conn))
                 {
                     // Define command type
                     sqlCommand.CommandType = CommandType.StoredProcedure;
 
-                    // Add input parameter @Name for stored proceedure & specify its value
-                    sqlCommand.Parameters.Add(new SqlParameter("@Name", SqlDbType.VarChar, 255));
-                    sqlCommand.Parameters["@Name"].Value = dbName;
+                   // (@CustomerName varchar(50),@CustomerCountry varchar(20),@CustomerEmail varchar(50),@CustomerPhone varchar(20))
 
-                    // Add input parameter @Email for stored procedure & specify its value
+
+                    // Add input parameter @CustomerName for stored proceedure & specify its value
+                    sqlCommand.Parameters.Add(new SqlParameter("@CustomerName", SqlDbType.VarChar, 50));
+                    sqlCommand.Parameters["@CustomerName"].Value = customerName;
+
+                    // Add input parameter @CustomerCountry for stored procedure & specify its value
+                    sqlCommand.Parameters.Add(new SqlParameter("@CustomerCountry", SqlDbType.VarChar, 20));
+                    sqlCommand.Parameters["@CustomerCountry"].Value = customerCountry;
+
+                    // Add input parameter @CustomerEmail for stored procedure & specify its value
                     sqlCommand.Parameters.Add(new SqlParameter("@CustomerEmail", SqlDbType.VarChar, 50));
-                    sqlCommand.Parameters["@CustomerEmail"].Value = dbEmail;
+                    sqlCommand.Parameters["@CustomerEmail"].Value = customerEmail;
+
+                    // Add input parameter @CustomerPhone for stored procedure & specify its value
+                    sqlCommand.Parameters.Add(new SqlParameter("@CustomerPhone", SqlDbType.VarChar, 20));
+                    sqlCommand.Parameters["@CustomerPhone"].Value = customerPhone;
 
 
                     // Execute stored procedure with customer data
