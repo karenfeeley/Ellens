@@ -11,7 +11,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-	<button onclick="topFunction()" id="topBtn" title="Go to top">Top</button>
+	
     <div role="main" class="slideshow-container">
 		<div class="mySlides fade">
 			<div class="numbertext">1 / 5</div>
@@ -71,5 +71,6 @@
 			</div>
 		</div>
 	</div>
+    <button onclick="topFunction()" id="topBtn" title="Go to top">Top</button>
 
 </asp:Content>
