@@ -56,7 +56,7 @@
 		<h3>Ellen Smith Bed &amp; Breakfast</h3>
 		<p>12 St Bridgets Terrace,</p>
 		<p>Galway.</p>
-		<p>Tel:+353(0)87 980 8504</p>
+		<p>Tel:+353(0)87 234 5678</p>
 		<p><img runat="server" src="~/Content/caImages/tn/tripadvisor2016.jpg" width="200" height="150" alt="Trip Advisor Cert 2016"></p>
 		<p><img runat="server" src="~/Content/caImages/tn/tripadvisor2015.jpg" width="200" height="150" alt="Trip Advisor Cert 2015"></p>
 

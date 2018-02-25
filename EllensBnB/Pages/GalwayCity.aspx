@@ -69,26 +69,26 @@
 	<div role="complementary" id="rightcol">
 		<aside>
 			<h3><em>Upcoming Events</em></h3>
-			<h4>May 2017</h4>
+			<h4>May 2018</h4>
 			<ul>
 				<li>
 					<a target="_blank" href="http://connemaramusselfestival.com/">Connemara Mussel Festival</a><br />
-					<strong>28th April - 01st May 2017</strong><br />
+					<strong>28th April - 01st May 2018</strong><br />
 					<em>"Cooking demonstrations, live music and of course plenty of mussels".</em>
 				</li>
 				<li>
 					<a target="_blank" href="http://www.galwaybluechallenge.org/">Galway Blue Challenge</a><br>
-					<strong>13th - 14th May 2017</strong><br />
-					<em>"Challenge yourself in 2017...Cycle - Climb - Cycle."</em>
+					<strong>13th - 14th May 2018</strong><br />
+					<em>"Challenge yourself in 2018...Cycle - Climb - Cycle."</em>
 				</li>
 				<li>
 					<a target="_blank" href="http://galwayearlymusic.com/">Galway Early Music Festival</a><br>
-					<strong>19th - 21st May 2017</strong><br />
+					<strong>19th - 21st May 2018</strong><br />
 					<em>"promoting the best of medieval, renaissance and baroque music making in Galway since 1996."</em>
 				</li>
 				<li>
 					<a target="_blank" href="http://www.huiceiri.ie/">Galway Hooker Regatta</a><br />
-					<strong>27th - 28th May 2017</strong><br />
+					<strong>27th - 28th May 2018</strong><br />
 					<em>"Traditional sailing boats"</em>
 				</li>
 			</ul>
@@ -97,25 +97,25 @@
 			<img runat="server" src="~/Content/caImages/tn/GC_hookers.jpg" width="210" height="180" alt="Hookers">
 		</p>
 		<aside>
-			<h4>June 2017</h4>
+			<h4>June 2018</h4>
 			<uL>
 				<li>
 					<a target="_blank" href="http://www.galwaycycling.org/">Galway Bike Week</a><br>
-					<strong>06th - 12th June 2017</strong><br />
+					<strong>06th - 12th June 2018</strong><br />
 					<em>"cycling events all over Galway county, organised the local authority, community groups, charities and cycling groups."</em>
 				</li>
 				<li>
 					<a target="_blank" href="http://galwayrowingclub.ie/">Galway Rowing Regatta</a><br>
-					<strong>18th June 2017</strong><br />
+					<strong>18th June 2018</strong><br />
 					<em>"Galway’s oldest rowing regatta, this year it celebrates its 133rd anniversary"</em>
 				</li>
 				<li>
 					<a target="_blank" href="http://gaelforceevents.com/">Gaelforce West</a><br />
-					<strong>24th June 2017</strong><br />
+					<strong>24th June 2018</strong><br />
 					<em>"Largest one day adventure race of its kind in the world involving cycling, running, hiking and kayaking."</em>
 				</li>
 				<li><a target="_blank" href="http://cliffdiving.redbull.com/en_IE">Red Bull Cliff Diving World Series</a><br>
-					<strong>24th June 2017</strong><br />
+					<strong>24th June 2018</strong><br />
 					<em>"INIS MÓR.Standing 27m./ 90 ft. (men) and 21m. / 70 ft. (women) in height, divers will reach speeds more than 85km/h before meeting the wild Atlantic below. "</em>
 				</li>
 			</ul>
