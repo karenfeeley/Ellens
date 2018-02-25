@@ -11,7 +11,8 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-	
+	<script type="text/javascript" src="/Scripts/Ellen_JSScript.js"></script>
+    <script type="text/javascript" src="/Scripts/Ellen_JSScript1.js"></script>
     <div role="main" class="slideshow-container">
 		<div class="mySlides fade">
 			<div class="numbertext">1 / 5</div>
