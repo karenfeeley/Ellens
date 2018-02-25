@@ -41,9 +41,9 @@ namespace EllensBnB.Pages
 
 
 
-            string dbName = "SATURDAY Test Name";
-            string dbEmail = "SATURDAY Test Email"; 
-
+            string dbName = "SATURDAY - SATURDAY Test Name";
+            string dbEmail = "SATURDAY SATURDAY  Test Email"; 
+            
 
             // Insert basic customer info into database           
             // Create db connection
