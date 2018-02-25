@@ -15,27 +15,27 @@
     <div role="main" class="slideshow-container">
 		<div class="mySlides fade">
 			<div class="numbertext">1 / 5</div>
-			<img src="../Content/caImages/lg/IS_Restaurants.jpg" style="width:100%" alt="Galway City Restaurants">
+			<img runat="server" src="~/Content/caImages/lg/IS_Restaurants.jpg" style="width:100%" alt="Galway City Restaurants">
 			<div class="text">Galway City Restaurants</div>
 		</div>
 		<div class="mySlides fade">
 			<div class="numbertext">2 / 5</div>
-			<img src="../Content/caImages/lg/IS_Cottage.jpg" style="width:100%" alt="Connemara">
+			<img runat="server" src="~/Content/caImages/lg/IS_Cottage.jpg" style="width:100%" alt="Connemara">
 			<div class="text">Connemara</div>
 		</div>
 		<div class="mySlides fade">
 			<div class="numbertext">3 / 5</div>
-			<img src="../Content/caImages/lg/IS_salthill_prom.jpg" style="width:100%" alt="Salthill Prominade">
+			<img runat="server" src="~/Content/caImages/lg/IS_salthill_prom.jpg" style="width:100%" alt="Salthill Prominade">
 			<div class="text">Salthill Prominade</div>
 		</div>
 		<div class="mySlides fade">
 			<div class="numbertext">4 / 5</div>
-			<img src="../Content/caImages/lg/IS_Cliffsofmoherlg.jpg" style="width:100%" alt="Cliffs of Moher">
+			<img runat="server" src="~/Content/caImages/lg/IS_Cliffsofmoherlg.jpg" style="width:100%" alt="Cliffs of Moher">
 			<div class="text">Cliffs of Moher</div>
 		</div>
 		<div class="mySlides fade">
 			<div class="numbertext">5 / 5</div>
-			<img src="../Content/caImages/lg/IS_Galway_docks.jpg" style="width:100%" alt="Galway Docks">
+			<img runat="server" src="~/Content/caImages/lg/IS_Galway_docks.jpg" style="width:100%" alt="Galway Docks">
 			<div class="text">Galway Docks</div>
 		</div>
 	</div>
