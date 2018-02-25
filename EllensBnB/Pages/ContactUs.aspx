@@ -33,7 +33,8 @@
 			</asp:UpdatePanel>
 			<asp:UpdatePanel ID="UpdatePanelCreateBooking" runat="server" UpdateMode="Conditional">
 				<ContentTemplate>
-					<p>Please select dates to check room availibility</p>
+                    
+					<p class = "bookingOption">Please select dates to check room availibility</p>
 					<asp:Calendar runat="server" OnDayRender="Calendar1_DayRender" OnSelectionChanged="Calendar1_SelectionChanged"></asp:Calendar>
 					<asp:Button runat="server" Text="Button" />
 					<asp:Button runat="server" Text="Button" />

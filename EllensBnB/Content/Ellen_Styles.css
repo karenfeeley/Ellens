@@ -433,7 +433,7 @@ input[type=submit] {
     padding: 12px 12px;
     border-radius: 4px;
     cursor: pointer;
-	margin:0px 5px 0px 60px;
+	margin:5px 5px 5px 0px;
 	font-size:50%;
 	border: 1px solid #ffffff;
 	box-shadow:1px 1px 1px #000066;
@@ -565,9 +565,7 @@ input[type=date],select, textarea
    }	
 Input[type=range].range {width:100%;}
 input[type=submit],input[type=reset]{font-size:100%;}
-    input[type=submit] {
-        margin: 0px 15px 25px 10px;
-    }
+    
 label.field	{font-weight:bold;
 			width:100%;
 			font-size:1em;}
@@ -578,9 +576,9 @@ label.field	{font-weight:bold;
 }
 
 .bookingOption {
-    margin: 0px 5px 0px 0px;
+    margin: 0px 0px 10px 0px;
     float: left;
     position: relative;
-    top: 10px;
-    left: 0px;
+    
+    
 }
