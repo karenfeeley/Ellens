@@ -32,6 +32,7 @@ for (i = 0; i < acc.length; i++) {
             panel.style.maxHeight = panel.scrollHeight + "px";
         }
     });
+}
 
 //for (i = 0; i < acc.length; i++) {
 //  acc[i].onclick = function() {

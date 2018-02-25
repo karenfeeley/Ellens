@@ -242,7 +242,7 @@ h4 {text-align:center;}
   to {opacity: 1}
 }
 /*containers*/
-div.polaroid {display:inline-block;
+/*div.polaroid {display:inline-block;
 			max-width:310px;
 			width:100%;
 			height:auto;
@@ -287,7 +287,55 @@ div.panel {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
+}*/
+/*attempt to fix containers*/
+.polaroid {display:inline-block;
+			max-width:310px;
+			width:100%;
+			height:auto;
+			Padding:8px 10px 8px 10px;
+			margin-right:7px;  
+			background-color: white;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			margin-bottom:10px;
 }
+
+.container {display:inline-block;
+   	background-color: #ccf2ff;
+    color: #000066;
+    cursor: pointer;
+    padding: 10px;
+	max-width:290px;
+    width:100%;
+    text-align: center;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+.active, .container:hover {
+    background-color: #4d88ff;
+}
+
+.container:after {
+    content: '\002B';
+    color: #000066;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active::after {
+    content: "\2212";
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
 #houseImg	{margin:0px 25px 0px 25px;width:92%;}
 
 /*aside styling*/
@@ -302,7 +350,7 @@ aside	{background-color:#ffffff;
 .altcom	{background-color:#e6e6e6;}
 
 /*Table styles*/
-table	{margin-left:25px;
+table	{margin-left:0px;
 		border:2px solid #000066;
 		max-width:600px;
 		width:90%;
@@ -517,7 +565,9 @@ input[type=date],select, textarea
    }	
 Input[type=range].range {width:100%;}
 input[type=submit],input[type=reset]{font-size:100%;}
-input[type=submit] {margin:0px 5px 0px 395px;}
+    input[type=submit] {
+        margin: 0px 15px 25px 10px;
+    }
 label.field	{font-weight:bold;
 			width:100%;
 			font-size:1em;}
@@ -525,7 +575,12 @@ label.field	{font-weight:bold;
 		padding: 15px;
 		border-radius: 10px;
 	}
-}			
+}
 
 .bookingOption {
+    margin: 0px 5px 0px 0px;
+    float: left;
+    position: relative;
+    top: 10px;
+    left: 0px;
 }
