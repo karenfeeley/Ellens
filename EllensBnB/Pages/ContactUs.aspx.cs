@@ -38,6 +38,8 @@ namespace EllensBnB.Pages
 
             //string connectionString = "Server = tcp:gordserver1.database.windows.net,1433;Initial Catalog = TestForWebCA_2; Integrated Security=False;Persist Security Info=False;User ID = gordserver1admin; Password=HelpMeOut!;";
             //new azure connectionstring
+            //string connectionString = "Server = tcp:karensserver.database.windows.net,1433; Initial Catalog = EllensBnB; Persist Security Info = False; User ID = ellenadminlogin; Password =PCEc2018; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30;";
+
             string connectionString = "Server = tcp:karensserver.database.windows.net,1433; Initial Catalog = EllensBnB; Persist Security Info = False; User ID = ellenadminlogin; Password =PCEc2018; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30;";
 
 
