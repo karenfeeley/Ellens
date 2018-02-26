@@ -46,7 +46,7 @@
 				<ContentTemplate>
 					<p>The data grid is here.  Column headings and data binding to be set</p>
 					<!-- Columns to be defined.  8 Options for field types - some below -->
-					<!--
+					
 					<asp:GridView ID="gvAvailability" runat="server" AutoGenerateColumns ="false">
 						<Columns>							
 							<asp:Boundfield HeaderText ="Date Selected"/>
@@ -58,7 +58,7 @@
 							<asp:CheckBoxField />
 						</Columns>
 						
-					</asp:GridView> -->
+					</asp:GridView> 
 					<asp:Label ID="lblCustomerEmail" runat="server" Text="Enter email address:  "></asp:Label> &nbsp &nbsp
 					<asp:TextBox ID="txtCustomerEmail" runat="server"></asp:TextBox>
 					<br />
@@ -90,7 +90,7 @@
 				<ContentTemplate>
 					<p>Confirm number of guests for selected room(s):</p>
 					<asp:Label ID="lblTaraSuite" runat="server" Text="Tara Suite"></asp:Label> &nbsp &nbsp
-					<asp:DropDownList ID="drpTaraSuite" runat="server" OnSelectedIndexChanged="drpTaraSuite_SelectedIndexChanged" Width="50px">
+					<asp:DropDownList ID="drpTaraSuite" runat="server" Width="50px">
 						<asp:ListItem Value="0"></asp:ListItem>
 						<asp:ListItem Value ="1"></asp:ListItem>
 					</asp:DropDownList>&nbsp &nbsp
