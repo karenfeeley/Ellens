@@ -46,6 +46,7 @@
 				<ContentTemplate>
 					<p>The data grid is here.  Column headings and data binding to be set</p>
 					<!-- Columns to be defined.  8 Options for field types - some below -->
+					<!--
 					<asp:GridView ID="gvAvailability" runat="server" AutoGenerateColumns ="false">
 						<Columns>							
 							<asp:Boundfield HeaderText ="Date Selected"/>
@@ -57,7 +58,7 @@
 							<asp:CheckBoxField />
 						</Columns>
 						
-					</asp:GridView>
+					</asp:GridView> -->
 					<asp:Label ID="lblCustomerEmail" runat="server" Text="Enter email address:  "></asp:Label> &nbsp &nbsp
 					<asp:TextBox ID="txtCustomerEmail" runat="server"></asp:TextBox>
 					<br />
