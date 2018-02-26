@@ -10,25 +10,25 @@
 namespace EllensBnB.Pages {
     
     
-    public partial class ContactUs1 {
+    public partial class ContactUs {
         
         /// <summary>
-        /// MakeNewReservation control.
+        /// SelectMakeBooking control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button MakeNewReservation;
+        protected global::System.Web.UI.WebControls.Button SelectMakeBooking;
         
         /// <summary>
-        /// UpdateExistingReservation control.
+        /// SelectExistingBooking control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button UpdateExistingReservation;
+        protected global::System.Web.UI.WebControls.Button SelectExistingBooking;
         
         /// <summary>
         /// ScriptManager1 control.
@@ -40,48 +40,21 @@ namespace EllensBnB.Pages {
         protected global::System.Web.UI.ScriptManager ScriptManager1;
         
         /// <summary>
-        /// UpdatePanelCalendar control.
+        /// UpdatePanelCheckDatesAreAvailable control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanelCalendar;
+        protected global::System.Web.UI.UpdatePanel UpdatePanelCheckDatesAreAvailable;
         
         /// <summary>
-        /// EllensCalendar control.
+        /// UpdatePanelCreateBooking control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar EllensCalendar;
-        
-        /// <summary>
-        /// CheckAvailabilitySelectedDates control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button CheckAvailabilitySelectedDates;
-        
-        /// <summary>
-        /// UpdatePanelReturnAvailability control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanelReturnAvailability;
-        
-        /// <summary>
-        /// gvAvailability control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvAvailability;
+        protected global::System.Web.UI.UpdatePanel UpdatePanelCreateBooking;
     }
 }

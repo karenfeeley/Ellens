@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/EllensSiteMaster.Master" AutoEventWireup="true" CodeBehind="ContactUs.aspx.cs" Inherits="EllensBnB.Pages.ContactUs1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/EllensSiteMaster.Master" AutoEventWireup="true" CodeBehind="DummyContactUs.aspx.cs" Inherits="EllensBnB.Pages.ContactUs" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 	<title>Ellen's B&amp;B - Contact Us</title>
 	<meta charset="utf-8">
@@ -15,8 +15,8 @@
 	<button onclick="topFunction()" id="topBtn" title="Go to top">Top</button>
     <div role ="main" id="leftcol">
 		<div class="bookingOption">
-			<asp:Button ID="MakeNewReservation" runat="server" Text="Make New Reservation" CssClass="bookingOption" OnClick="MakeNewReservation_Click" />
-			<asp:Button ID="UpdateExistingReservation" runat="server" Text="Update Existing Reservation" CssClass ="bookingOption" OnClick="UpdateExistingReservation_Click"/>
+			<asp:Button ID="SelectMakeBooking" runat="server" Text="Make New Reservation" CssClass="bookingOption" OnClick="SelectMakeBooking_Click" />
+			<asp:Button ID="SelectExistingBooking" runat="server" Text="Update Existing Reservation" CssClass ="bookingOption" OnClick="SelectExistingBooking_Click"/>
 			
 		</div>
 
@@ -29,25 +29,18 @@
 			</asp:ScriptManager>
 
 
-			<asp:UpdatePanel ID="UpdatePanelCalendar" runat="server" UpdateMode="Conditional">
-				<ContentTemplate>
-					<p class = "bookingOption">Please select dates to check room availibility</p>					
-					<asp:Calendar ID="EllensCalendar" runat="server" OnDayRender="EllensCalendar_DayRender"></asp:Calendar>
-					<asp:ListBox runat="server"></asp:ListBox>
-					<asp:Button runat="server" Text="Select Dates" />
-					<asp:Button runat="server" Text="Clear Dates" />
-					<asp:Button ID="CheckAvailabilitySelectedDates" runat="server" Text="Check Availability" />
-					
-				</ContentTemplate>
+			<asp:UpdatePanel ID="UpdatePanelCheckDatesAreAvailable" runat="server" UpdateMode="Conditional">
+
 
 			</asp:UpdatePanel>
-			<asp:UpdatePanel ID="UpdatePanelReturnAvailability" runat="server" UpdateMode="Conditional">
+			<asp:UpdatePanel ID="UpdatePanelCreateBooking" runat="server" UpdateMode="Conditional">
 				<ContentTemplate>
-					<asp:GridView ID="gvAvailability" runat="server" AutoGenerateColumns ="false">
-
-
-					</asp:GridView>
-					
+                    
+					<p class = "bookingOption">Please select dates to check room availibility</p>
+					<asp:Calendar runat="server" OnDayRender="Calendar1_DayRender" OnSelectionChanged="Calendar1_SelectionChanged"></asp:Calendar>
+					<asp:Button runat="server" Text="Button" />
+					<asp:Button runat="server" Text="Button" />
+					<asp:ListBox runat="server"></asp:ListBox>
 				</ContentTemplate>
 			</asp:UpdatePanel>
 			
@@ -72,4 +65,5 @@
 		<p><img runat="server" src="~/Content/caImages/tn/tripadvisor2015.jpg" width="200" height="150" alt="Trip Advisor Cert 2015"></p>
 
 	</div> <!--end of right column-->
+
 </asp:Content>

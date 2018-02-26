@@ -274,8 +274,9 @@
     <Content Include="bin\roslyn\vbc.rsp" />
     <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Pages\Default.aspx" />
     <Content Include="Pages\ContactUs.aspx" />
+    <Content Include="Pages\Default.aspx" />
+    <Content Include="Pages\DummyContactUs.aspx" />
     <Content Include="Pages\Directions_FAQs.aspx" />
     <Content Include="Pages\GalwayCity.aspx" />
     <Content Include="Pages\GalwayOther.aspx" />
@@ -400,6 +401,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ContactUs.aspx.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ContactUs.aspx.designer.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -407,12 +415,12 @@
     <Compile Include="Pages\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\ContactUs.aspx.cs">
-      <DependentUpon>ContactUs.aspx</DependentUpon>
+    <Compile Include="Pages\DummyContactUs.aspx.cs">
+      <DependentUpon>DummyContactUs.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\ContactUs.aspx.designer.cs">
-      <DependentUpon>ContactUs.aspx</DependentUpon>
+    <Compile Include="Pages\DummyContactUs.aspx.designer.cs">
+      <DependentUpon>DummyContactUs.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Directions_FAQs.aspx.cs">
       <DependentUpon>Directions_FAQs.aspx</DependentUpon>
