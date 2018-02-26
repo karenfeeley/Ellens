@@ -41,16 +41,96 @@
 				</ContentTemplate>
 
 			</asp:UpdatePanel>
+
 			<asp:UpdatePanel ID="UpdatePanelReturnAvailability" runat="server" UpdateMode="Conditional">
 				<ContentTemplate>
+					<p>The data grid is here.  Column headings and data binding to be set</p>
+					<!-- Columns to be defined.  8 Options for field types - some below -->
 					<asp:GridView ID="gvAvailability" runat="server" AutoGenerateColumns ="false">
-
-
+						<Columns>							
+							<asp:Boundfield HeaderText ="Date Selected"/>
+							<asp:BoundField HeaderText ="Room 1" />
+							<asp:BoundField HeaderText ="Room 2" />
+							<asp:Templatefield></asp:Templatefield>
+							<asp:HyperLinkField />
+							<asp:CommandField />
+							<asp:CheckBoxField />
+						</Columns>
+						
 					</asp:GridView>
-					
+					<asp:Label ID="lblCustomerEmail" runat="server" Text="Enter email address:  "></asp:Label> &nbsp &nbsp
+					<asp:TextBox ID="txtCustomerEmail" runat="server"></asp:TextBox>
+					<br />
+					<asp:Button ID="ReserveSelectedRooms" runat="server" Text="ReserveSelectedRooms" />
 				</ContentTemplate>
 			</asp:UpdatePanel>
 			
+			<asp:UpdatePanel ID="RegisterNewCustomer" runat="server">
+				<ContentTemplate>
+					<asp:Label ID="lblEnteredCustomerEmail" runat="server" Text="">
+						The inner HTML on this label needs to be set to the customer email provided
+					</asp:Label>
+					<br />
+					<asp:Label ID="lblCustomerName" runat="server" Text="Name:  "></asp:Label> &nbsp &nbsp
+					<asp:TextBox ID="txtCustomerName" runat="server"></asp:TextBox>
+					<br />
+					<asp:Label ID="lblCustomerPhone" runat="server" Text="Telephone:  "></asp:Label> &nbsp &nbsp
+					<asp:TextBox ID="txtCustomerPhone" runat="server"></asp:TextBox>
+					<br />
+					<asp:Label ID="lblCustomerCountry" runat="server" Text="Country"></asp:Label> &nbsp &nbsp
+					<asp:TextBox ID="txtCustomerCountry" runat="server"></asp:TextBox>
+					<br />
+					
+					<asp:Button ID="CreateNewAccount" runat="server" Text="Create New Account" />
+				</ContentTemplate>
+
+			</asp:UpdatePanel>
+			<asp:UpdatePanel ID="BookingData" runat="server">
+				<ContentTemplate>
+					<p>Confirm number of guests for selected room(s):</p>
+					<asp:Label ID="lblTaraSuite" runat="server" Text="Tara Suite"></asp:Label> &nbsp &nbsp
+					<asp:DropDownList ID="drpTaraSuite" runat="server" OnSelectedIndexChanged="drpTaraSuite_SelectedIndexChanged" Width="50px">
+						<asp:ListItem Value="0"></asp:ListItem>
+						<asp:ListItem Value ="1"></asp:ListItem>
+					</asp:DropDownList>&nbsp &nbsp
+					<asp:Label ID="lblLirSuite" runat="server" Text="Lir Suite"></asp:Label>&nbsp &nbsp
+					<asp:DropDownList ID="drpLirSuite" runat="server" Width="50px">
+						<asp:ListItem Value="0"></asp:ListItem>
+						<asp:ListItem Value ="1"></asp:ListItem>
+						<asp:ListItem Value ="2"></asp:ListItem>
+					</asp:DropDownList>&nbsp &nbsp
+					<asp:Label ID="lblBoyneSuite" runat="server" Text="Boyne Suite"></asp:Label>&nbsp &nbsp
+					<asp:DropDownList ID="drpBoyneSuite" runat="server" Width="50px">
+						<asp:ListItem Value="0"></asp:ListItem>
+						<asp:ListItem Value ="1"></asp:ListItem>
+						<asp:ListItem Value ="2"></asp:ListItem>
+						<asp:ListItem Value ="3"></asp:ListItem>
+					</asp:DropDownList>&nbsp &nbsp
+					<asp:Label ID="lblKellsSuite" runat="server" Text="Kells Suite"></asp:Label>&nbsp &nbsp
+					<asp:DropDownList ID="drpKellsSuite" runat="server" Width="50px">
+						<asp:ListItem Value="0"></asp:ListItem>
+						<asp:ListItem Value ="1"></asp:ListItem>
+						<asp:ListItem Value ="2"></asp:ListItem>
+						<asp:ListItem Value ="3"></asp:ListItem>
+						<asp:ListItem Value ="4"></asp:ListItem>
+					</asp:DropDownList>&nbsp &nbsp
+					<br />
+					<p>Add any additional notes or comments here (e.g. Early or late arrival, allergies, etc.):</p>
+					<asp:TextBox ID="txtCustomerBookingNotes" runat="server"></asp:TextBox>
+					<br />
+					<asp:Button ID="ConfirmBooking" runat="server" Text="Confirm Booking" />
+
+				</ContentTemplate>				
+
+			</asp:UpdatePanel>
+			<asp:UpdatePanel ID="UpdatePanelBookingConfirmation" runat="server">
+				<ContentTemplate>
+					<h2>Thank you for your reservation.</h2>
+					<p>Your booking reference number is: <span id="BookingIDreference">0</span></p>
+				</ContentTemplate>
+
+			</asp:UpdatePanel>
+
 
 		</div>
 		
