@@ -7,6 +7,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 	<button onclick="topFunction()" id="topBtn" title="Go to top">Top</button>
+    <asp:SiteMapPath ID="SiteMapPath1" Runat="server"></asp:SiteMapPath>
     <div>
 		<h1><a runat="server" href ="~/Pages/GalwayCity.aspx" style="display:block">Galway City</a></h1>
 	</div>

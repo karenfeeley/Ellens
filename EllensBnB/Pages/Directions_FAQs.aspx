@@ -16,6 +16,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 	<button onclick="topFunction()" id="topBtn" title="Go to top">Top</button>
     <div role="main" id="leftcol">
+        <asp:SiteMapPath ID="SiteMapPath1" Runat="server"></asp:SiteMapPath>
 		<h2 class="direction">Location of Ellen's B&amp;B in Galway</h2>
 		<div id="map"></div>
 		<h2 class="direction">FAQs - Frequently Asked Questions?</h2>

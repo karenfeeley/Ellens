@@ -4,6 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 	<button onclick="topFunction()" id="topBtn" title="Go to top">Top</button>
     <div role ="main" id="ReportsPage">
+        <asp:SiteMapPath ID="SiteMapPath1" Runat="server"></asp:SiteMapPath>
         <asp:ScriptManager ID="ScriptManager1" runat="server">
             </asp:ScriptManager>
         

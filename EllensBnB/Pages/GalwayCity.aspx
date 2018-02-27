@@ -12,6 +12,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 	<button onclick="topFunction()" id="topBtn" title="Go to top">Top</button>
     <div role="main" id="leftcol">
+        <asp:SiteMapPath ID="SiteMapPath1" Runat="server"></asp:SiteMapPath>
 		<h2>Galway City Sights &amp; Activities</h2>
 		<h4><em>Sightseeing tours can be booked with Ellen's B&amp;B at a discount.</em></h4>
 		<h4>Galway City Sights</h4>

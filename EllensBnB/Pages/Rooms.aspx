@@ -12,6 +12,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 	<button onclick="topFunction()" id="topBtn" title="Go to top">Top</button>
     <div role="main" id="leftcol">
+        <asp:SiteMapPath ID="SiteMapPath1" Runat="server"></asp:SiteMapPath>
 		<h2>Room Options at Ellen's</h2>
 		<p>
 			At Ellen's Bed and Breakfast we pride ourselves by ensuring your stay with us is relaxing and comfortable.
