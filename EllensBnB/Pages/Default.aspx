@@ -66,8 +66,8 @@
 		</div>
 		<div class="polaroid">
 			<img src="../Content/caImages/lg/R_family_room.jpg" alt="Family Room" width="290" height="196">
-			<button class="container">Family Room</button>
-			<div class="panel">
+			<button class="container" onclick="showPanel('family_panel')">Family Room</button>
+			<div id="family_panel" class="panel">
 				<p>We have options in room sizes, accommodating 1, 2, 3 &amp;4 people in our family room. Check out our <a href="Ellen_Rooms.html">Rooms</a></p>
 			</div>
 		</div>

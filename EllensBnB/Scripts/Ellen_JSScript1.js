@@ -19,19 +19,12 @@ function showSlides() {
     dots[slideIndex-1].className += " active";
     setTimeout(showSlides, 2000); // Change image every 2 seconds
 }
-var acc = document.getElementsByClassName("container");
-var i;
 
-for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function () {
-        this.classList.toggle("active");
-        var panel = this.nextElementSibling;
-        if (panel.style.maxHeight) {
-            panel.style.maxHeight = null;
-        } else {
-            panel.style.maxHeight = panel.scrollHeight + "px";
-        }
-    })
+/*new code by Darren*/
+
+function showPanel(panelId) {
+    var element = document.getElementById(panelId);
+    eleme
 }
 
 //for (i = 0; i < acc.length; i++) {
