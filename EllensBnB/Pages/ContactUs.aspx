@@ -32,10 +32,10 @@
 			<asp:UpdatePanel ID="UpdatePanelCalendar" runat="server" UpdateMode="Conditional">
 				<ContentTemplate>
 					<p class = "bookingOption">Please select dates to check room availibility</p>					
-					<asp:Calendar ID="EllensCalendar" runat="server" OnDayRender="EllensCalendar_DayRender"></asp:Calendar>
-					<asp:ListBox runat="server"></asp:ListBox>
-					<asp:Button runat="server" Text="Select Dates" />
-					<asp:Button runat="server" Text="Clear Dates" />
+					<asp:Calendar ID="EllensWebCalendar" runat="server" OnDayRender="EllensCalendar_DayRender" OnSelectionChanged="EllensCalendar_SelectionChanged"></asp:Calendar>
+					<asp:ListBox runat="server" ID="lstUserSelectedDates"></asp:ListBox>
+					<asp:Button runat="server" Text="Select Dates" ID="btnSelectDates" OnClick="btnSelectDates_Click" />
+					<asp:Button runat="server" Text="Clear Dates" ID="btnClearDates" OnClick="btnClearDates_Click" />
 					<asp:Button ID="CheckAvailabilitySelectedDates" runat="server" Text="Check Availability" />
 					
 				</ContentTemplate>

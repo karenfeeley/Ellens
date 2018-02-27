@@ -49,13 +49,40 @@ namespace EllensBnB.Pages {
         protected global::System.Web.UI.UpdatePanel UpdatePanelCalendar;
         
         /// <summary>
-        /// EllensCalendar control.
+        /// EllensWebCalendar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar EllensCalendar;
+        protected global::System.Web.UI.WebControls.Calendar EllensWebCalendar;
+        
+        /// <summary>
+        /// lstUserSelectedDates control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox lstUserSelectedDates;
+        
+        /// <summary>
+        /// btnSelectDates control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSelectDates;
+        
+        /// <summary>
+        /// btnClearDates control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnClearDates;
         
         /// <summary>
         /// CheckAvailabilitySelectedDates control.
