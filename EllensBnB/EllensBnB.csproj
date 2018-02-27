@@ -369,6 +369,8 @@
     <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EllensCode\BookedDates.cs" />
+    <Compile Include="EllensCode\DBMethods.cs" />
     <Compile Include="EllensCode\EllenCalendar.cs" />
     <Compile Include="Pages\AboutUs.aspx.cs">
       <DependentUpon>AboutUs.aspx</DependentUpon>
