@@ -85,11 +85,8 @@
                                     ControlToValidate="txtCustomerEmail"    Display="Dynamic" 
                                     ErrorMessage="Please enter an email in a valid format"  ForeColor="Red" 
                                     ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
-                        ></asp:RegularExpressionValidator>
-                  
-
-
-
+                        ></asp:RegularExpressionValidator>      
+                    
 					<asp:Label ID="GordTestLabelRESERVE" runat="server" Text="Label"></asp:Label>
 				</ContentTemplate>
 			</asp:UpdatePanel>
@@ -103,14 +100,39 @@
 					<asp:Label ID="lblCustomerName" runat="server" Text="Name:  "></asp:Label> &nbsp &nbsp
 					<asp:TextBox ID="txtCustomerName" runat="server"></asp:TextBox>
 					<br />
+                                        			
+			
+                    <!--  txtCustomerName Validation PT  1 -->
+                     <asp:RequiredFieldValidator    
+                                    ID="RequiredFieldValidator1"          runat="server" 
+                                    ControlToValidate="txtCustomerName"    Display="Dynamic"
+                                    ErrorMessage="Name can't be blank"     ForeColor="Red"
+                            ></asp:RequiredFieldValidator>
+					<br />
+
+
 					<asp:Label ID="lblCustomerPhone" runat="server" Text="Telephone:  "></asp:Label> &nbsp &nbsp
 					<asp:TextBox ID="txtCustomerPhone" runat="server"></asp:TextBox>
 					<br />
+
+
+                      <!--  txtPhoneNo Validation PT  1 -->
+                     <asp:RequiredFieldValidator    
+                                    ID="RequiredFieldValidator2"          runat="server" 
+                                    ControlToValidate="txtCustomerPhone"  Display="Dynamic"
+                                    ErrorMessage="Telephone Phone Number can't be blank"    ForeColor="Red"
+                            ></asp:RequiredFieldValidator>
+					<br />
+					<asp:Label ID="GordTestLabelNewCustomer" runat="server" Text="Label"></asp:Label>
+
+
+
+
 					<asp:Label ID="lblCustomerCountry" runat="server" Text="Country"></asp:Label> &nbsp &nbsp
 					<asp:TextBox ID="txtCustomerCountry" runat="server"></asp:TextBox>
 					<br />
 					
-					<asp:Button ID="CreateNewAccount" runat="server" Text="Create New Account" />
+					<asp:Button ID="CreateNewAccount" runat="server" Text="Create New Account" OnClick="CreateNewAccount_Click" />
 				</ContentTemplate>
 
 			</asp:UpdatePanel>

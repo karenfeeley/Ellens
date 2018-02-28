@@ -118,5 +118,34 @@ namespace EllensBnB.Pages
                 } // end if
             }
         }
+
+        protected void CreateNewAccount_Click(object sender, EventArgs e)
+        {
+            //Register New Customer Validation PT  2
+
+            // disable unobtrusive validation
+            UnobtrusiveValidationMode =
+                System.Web.UI.UnobtrusiveValidationMode.None;
+
+            // if this is not the first time the page is loading
+            // (i.e., the user has already submitted form data)
+            if (IsPostBack)
+            {
+                Validate();  // validate the form
+
+                // if the form is valid
+                if (IsValid)
+                {
+                    // retrieve the values submitted by the user
+                    string validName = txtCustomerName.Text;
+                    string validPhoneNUmber = txtCustomerPhone.Text;
+
+
+                    // show the submitted values                                       ///  seems to want the whole page to be valid to carry out next command !!
+                    GordTestLabelNewCustomer.Text = validName + " " + validPhoneNUmber;
+                } // end if
+            }
+
+        }
     }
 }
