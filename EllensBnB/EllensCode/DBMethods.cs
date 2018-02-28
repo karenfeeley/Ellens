@@ -27,23 +27,19 @@ namespace EllensBnB.EllensCode
 				{
 					BookedDates booking = new BookedDates(reader.GetDateTime(0), reader.GetInt32(1));
 					queryResult.Add(booking);
-
 				}
 			}
 			catch (Exception)
 			{
-
 				throw;
 			}
 			finally
 			{
 				dbConnection.Close();
 			}
-
 			return queryResult;
 		}
-
-
+		
 		//call uspCreateBookingID
 		public static int CreateBookingID(string custEmail, string paidStatus = null, string bookingNotes = null)
 		{
@@ -58,19 +54,16 @@ namespace EllensBnB.EllensCode
 			cmdCreateBookingID.Parameters.Add(notes);
 
 			var bookingID = new SqlParameter("@BookingID", SqlDbType.Int);
-			bookingID.Direction = ParameterDirection.ReturnValue;
+			bookingID.Direction = ParameterDirection.Output;
 			cmdCreateBookingID.Parameters.Add(bookingID);
 
-			//var bookingID = cmdCreateBookingID.Parameters.Add(new SqlParameter("@BookingID", SqlDbType.Int));
-			//bookingID.Direction = ParameterDirection.ReturnValue;
 			try
 			{
 				dbConnection.Open();
 				customerEmail.Value = custEmail;
-				paid.Value = paidStatus;
-				notes.Value = bookingNotes;
+				paid.Value = (paidStatus == null) ? "" : paidStatus;
+				notes.Value = (bookingNotes == null) ? "" : bookingNotes;
 				cmdCreateBookingID.ExecuteNonQuery();
-				//var returnedBookingID = bookingID.Value;
 				result = (int)bookingID.Value;
 			}
 			catch (Exception)
@@ -206,8 +199,6 @@ namespace EllensBnB.EllensCode
 		//call uspRetrieveRoomRate - single date
 		public static void RetrieveRoomRate(ref List<RoomRateByDate> dates)
 		{
-			//List<RoomRateByDate> roomRatesForDates = new List<RoomRateByDate>();
-
 			SqlCommand cmdRetrieveRoomRate = new SqlCommand("uspRetrieveRoomRate", dbConnection);
 			cmdRetrieveRoomRate.CommandType = CommandType.StoredProcedure;
 			SqlParameter pRoomID = new SqlParameter("@RoomID", SqlDbType.Int);
@@ -234,15 +225,12 @@ namespace EllensBnB.EllensCode
 			}
 			catch (Exception)
 			{
-
 				throw;
 			}
 			finally
 			{
 				dbConnection.Close();
 			}
-
-			//return roomrate;
 		}
 
 
