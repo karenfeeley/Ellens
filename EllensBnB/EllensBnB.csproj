@@ -370,8 +370,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EllensCode\BookedDates.cs" />
+    <Compile Include="EllensCode\BookingElement.cs" />
     <Compile Include="EllensCode\DBMethods.cs" />
     <Compile Include="EllensCode\EllenCalendar.cs" />
+    <Compile Include="EllensCode\RoomRateByDate.cs" />
     <Compile Include="Pages\AboutUs.aspx.cs">
       <DependentUpon>AboutUs.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
