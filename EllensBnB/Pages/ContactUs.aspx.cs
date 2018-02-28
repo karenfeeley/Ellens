@@ -104,7 +104,7 @@ namespace EllensBnB.Pages
             // (i.e., the user has already submitted form data)
             if (IsPostBack)
             {
-                Validate();  // validate the form
+                Page.Validate("UpdatePanelReturnAvailabilityValidation");  // validate the form
 
                 // if the form is valid
                 if (IsValid)
@@ -131,7 +131,7 @@ namespace EllensBnB.Pages
             // (i.e., the user has already submitted form data)
             if (IsPostBack)
             {
-                Validate();  // validate the form
+                Page.Validate("RegisterNewCustomerValidation");  // validate the form
 
                 // if the form is valid
                 if (IsValid)
@@ -145,7 +145,9 @@ namespace EllensBnB.Pages
                     GordTestLabelNewCustomer.Text = validName + " " + validPhoneNUmber;
                 } // end if
             }
-
         }
+
+
+
     }
 }

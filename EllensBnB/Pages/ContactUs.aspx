@@ -40,10 +40,13 @@
 					<asp:Button ID="CheckAvailabilitySelectedDates" runat="server" Text="Check Availability" />
 					
 				</ContentTemplate>
-
 			</asp:UpdatePanel>
 
-			<asp:UpdatePanel ID="UpdatePanelReturnAvailability" runat="server" UpdateMode="Conditional">
+
+
+       	
+		
+		<asp:UpdatePanel ID="UpdatePanelReturnAvailability" runat="server" UpdateMode="Conditional">
 				<ContentTemplate>
 					<p>The data grid is here.  Column headings and data binding to be set</p>
 					<!-- Columns to be defined.  8 Options for field types - some below -->
@@ -60,36 +63,40 @@
 						</Columns>
 						
 					</asp:GridView> 
-					<asp:Label ID="lblCustomerEmail" runat="server" Text="Enter email address:  "></asp:Label> &nbsp &nbsp
-					<asp:TextBox ID="txtCustomerEmail" runat="server"></asp:TextBox>
+					<asp:Label ID="lblCustomerEmail" runat="server" Text="Enter email address:  " validationgroup="UpdatePanelReturnAvailabilityValidation"></asp:Label> &nbsp &nbsp
+					<asp:TextBox ID="txtCustomerEmail" runat="server" validationgroup="UpdatePanelReturnAvailabilityValidation"></asp:TextBox>
 					<br />
-                  
 
 
-
-					<asp:Button ID="ReserveSelectedRooms" runat="server" Text="ReserveSelectedRooms" OnClick="ReserveSelectedRooms_Click" />
+					<asp:Button ID="ReserveSelectedRooms" runat="server" Text="ReserveSelectedRooms" OnClick="ReserveSelectedRooms_Click" validationgroup="UpdatePanelReturnAvailabilityValidation"/>
 					<br />
 
 
 
-                     <!--  Email TxtBox Validation PT  1 -->
+                     <!--  Email TxtBox Validation PT  1 -->                         <!--not in use............enableclientscript="false" -->
                      <asp:RequiredFieldValidator    
                                     ID="nameRequiredFieldValidator"         runat="server" 
+                                    validationgroup="UpdatePanelReturnAvailabilityValidation"
                                     ControlToValidate="txtCustomerEmail"    Display="Dynamic"
-                                    ErrorMessage="Email can't be blank"     ForeColor="Red"
+                                    ErrorMessage="Email can't be blank"     ForeColor="Red"   
+                                   
                             ></asp:RequiredFieldValidator>
 
                     <!--  Email TxtBox Validation PT  2 -->
                     <asp:RegularExpressionValidator     
                                     ID="emailRegularExpressionValidator"    runat="server" 
+                                    validationgroup="UpdatePanelReturnAvailabilityValidation"
                                     ControlToValidate="txtCustomerEmail"    Display="Dynamic" 
-                                    ErrorMessage="Please enter an email in a valid format"  ForeColor="Red" 
+                                    ErrorMessage="Please enter an email in a valid format"  ForeColor="Red"                                     
                                     ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
                         ></asp:RegularExpressionValidator>      
                     
 					<asp:Label ID="GordTestLabelRESERVE" runat="server" Text="Label"></asp:Label>
 				</ContentTemplate>
 			</asp:UpdatePanel>
+
+
+
 			
 			<asp:UpdatePanel ID="RegisterNewCustomer" runat="server">
 				<ContentTemplate>
@@ -98,29 +105,31 @@
 					</asp:Label>
 					<br />
 					<asp:Label ID="lblCustomerName" runat="server" Text="Name:  "></asp:Label> &nbsp &nbsp
-					<asp:TextBox ID="txtCustomerName" runat="server"></asp:TextBox>
+					<asp:TextBox ID="txtCustomerName" runat="server" validationgroup="RegisterNewCustomerValidation"></asp:TextBox>
 					<br />
                                         			
 			
                     <!--  txtCustomerName Validation PT  1 -->
                      <asp:RequiredFieldValidator    
                                     ID="RequiredFieldValidator1"          runat="server" 
+                                    validationgroup="RegisterNewCustomerValidation"
                                     ControlToValidate="txtCustomerName"    Display="Dynamic"
-                                    ErrorMessage="Name can't be blank"     ForeColor="Red"
+                                    ErrorMessage="Name can't be blank"     ForeColor="Red"                                   
                             ></asp:RequiredFieldValidator>
 					<br />
 
 
 					<asp:Label ID="lblCustomerPhone" runat="server" Text="Telephone:  "></asp:Label> &nbsp &nbsp
-					<asp:TextBox ID="txtCustomerPhone" runat="server"></asp:TextBox>
+					<asp:TextBox ID="txtCustomerPhone" runat="server" validationgroup="RegisterNewCustomerValidation"></asp:TextBox>
 					<br />
 
 
                       <!--  txtPhoneNo Validation PT  1 -->
                      <asp:RequiredFieldValidator    
                                     ID="RequiredFieldValidator2"          runat="server" 
+                                    validationgroup="RegisterNewCustomerValidation"
                                     ControlToValidate="txtCustomerPhone"  Display="Dynamic"
-                                    ErrorMessage="Telephone Phone Number can't be blank"    ForeColor="Red"
+                                    ErrorMessage="Telephone Phone Number can't be blank"    ForeColor="Red"                                     
                             ></asp:RequiredFieldValidator>
 					<br />
 					<asp:Label ID="GordTestLabelNewCustomer" runat="server" Text="Label"></asp:Label>
@@ -132,10 +141,13 @@
 					<asp:TextBox ID="txtCustomerCountry" runat="server"></asp:TextBox>
 					<br />
 					
-					<asp:Button ID="CreateNewAccount" runat="server" Text="Create New Account" OnClick="CreateNewAccount_Click" />
+					<asp:Button ID="CreateNewAccount" runat="server" Text="Create New Account" OnClick="CreateNewAccount_Click" validationgroup="RegisterNewCustomerValidation" />
 				</ContentTemplate>
 
 			</asp:UpdatePanel>
+
+
+                        
 			<asp:UpdatePanel ID="BookingData" runat="server">
 				<ContentTemplate>
 					<p>Confirm number of guests for selected room(s):</p>
