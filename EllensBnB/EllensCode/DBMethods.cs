@@ -288,5 +288,41 @@ namespace EllensBnB.EllensCode
 				dbConnection.Close();
 			}
 		}
+
+
+		//calls uspCreateNewCustomer if not existing
+		public static void CreateNewCustomer(string custEmail, string country, string name, string phone)
+		{
+			SqlCommand cmdCreateNewCustomer = new SqlCommand("uspCreateNewCustomer", dbConnection);
+			cmdCreateNewCustomer.CommandType = CommandType.StoredProcedure;
+			SqlParameter pCustomerEmail = new SqlParameter("@CustomerEmail", SqlDbType.VarChar, 50);
+			SqlParameter pCustomerCountry = new SqlParameter("@CustomerCountry", SqlDbType.VarChar, 20);
+			SqlParameter pCustomerPhone = new SqlParameter("@CustomerPhone", SqlDbType.VarChar, 20);
+			SqlParameter pCustomerName = new SqlParameter("@CustomerName", SqlDbType.VarChar, 50);
+
+			cmdCreateNewCustomer.Parameters.Add(pCustomerEmail);
+			cmdCreateNewCustomer.Parameters.Add(pCustomerName);
+			cmdCreateNewCustomer.Parameters.Add(pCustomerCountry);
+			cmdCreateNewCustomer.Parameters.Add(pCustomerPhone);
+
+			try
+			{
+				dbConnection.Open();
+				pCustomerEmail.Value = custEmail;
+				pCustomerName.Value = name;
+				pCustomerCountry.Value = country;
+				pCustomerPhone.Value = phone;
+				cmdCreateNewCustomer.ExecuteNonQuery();
+			}
+			catch (Exception)
+			{
+				throw;
+			}
+			finally
+			{
+				dbConnection.Close();
+			}
+		}
+
 	}
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Web;
 
 namespace EllensBnB.EllensCode
@@ -23,6 +24,23 @@ namespace EllensBnB.EllensCode
 		}
 		public Customer()
 		{
+		}
+
+		public override string ToString()
+		{
+			StringBuilder sb = new StringBuilder();
+			sb.Append(CustomerID);
+			sb.Append(", ");
+			sb.Append(CustomerEmail);
+			sb.Append(", ");
+			sb.Append(CustomerName);
+			sb.Append(", ");
+			sb.Append(CustomerCountry);
+			sb.Append(", ");
+			sb.Append(CustomerPhone);
+
+			return sb.ToString();
+
 		}
 	}
 }
