@@ -63,7 +63,34 @@
 					<asp:Label ID="lblCustomerEmail" runat="server" Text="Enter email address:  "></asp:Label> &nbsp &nbsp
 					<asp:TextBox ID="txtCustomerEmail" runat="server"></asp:TextBox>
 					<br />
-					<asp:Button ID="ReserveSelectedRooms" runat="server" Text="ReserveSelectedRooms" />
+                  
+
+
+
+					<asp:Button ID="ReserveSelectedRooms" runat="server" Text="ReserveSelectedRooms" OnClick="ReserveSelectedRooms_Click" />
+					<br />
+
+
+
+                     <!--  Email TxtBox Validation PT  1 -->
+                     <asp:RequiredFieldValidator    
+                                    ID="nameRequiredFieldValidator"         runat="server" 
+                                    ControlToValidate="txtCustomerEmail"    Display="Dynamic"
+                                    ErrorMessage="Email can't be blank"     ForeColor="Red"
+                            ></asp:RequiredFieldValidator>
+
+                    <!--  Email TxtBox Validation PT  2 -->
+                    <asp:RegularExpressionValidator     
+                                    ID="emailRegularExpressionValidator"    runat="server" 
+                                    ControlToValidate="txtCustomerEmail"    Display="Dynamic" 
+                                    ErrorMessage="Please enter an email in a valid format"  ForeColor="Red" 
+                                    ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
+                        ></asp:RegularExpressionValidator>
+                  
+
+
+
+					<asp:Label ID="GordTestLabelRESERVE" runat="server" Text="Label"></asp:Label>
 				</ContentTemplate>
 			</asp:UpdatePanel>
 			

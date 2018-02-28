@@ -91,5 +91,32 @@ namespace EllensBnB.Pages
 			Session["SelectedDates"] = null;
 			userSelectedDatesForDatabaseQuery.Clear();
 		}
-	}
+
+        protected void ReserveSelectedRooms_Click(object sender, EventArgs e)
+        {
+            //Email TxtBox Validation PT  3
+
+            // disable unobtrusive validation
+            UnobtrusiveValidationMode =
+                System.Web.UI.UnobtrusiveValidationMode.None;
+
+            // if this is not the first time the page is loading
+            // (i.e., the user has already submitted form data)
+            if (IsPostBack)
+            {
+                Validate();  // validate the form
+
+                // if the form is valid
+                if (IsValid)
+                {
+                    // retrieve the values submitted by the user
+                    string validEmail = txtCustomerEmail.Text;
+
+
+                    // show the submitted values
+                    GordTestLabelRESERVE.Text = validEmail;
+                } // end if
+            }
+        }
+    }
 }
