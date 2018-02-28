@@ -244,5 +244,49 @@ namespace EllensBnB.EllensCode
 
 			//return roomrate;
 		}
+
+
+		//calls uspCheckExistingCustomer
+		//returns a Customer object if exists and false bool if not existing customer
+		public static dynamic CheckExistingCustomer(string custemail)
+		{
+			SqlCommand cmdCheckExistingCustomer = new SqlCommand("uspCheckExistingCustomer", dbConnection);
+			cmdCheckExistingCustomer.CommandType = CommandType.StoredProcedure;
+			SqlParameter pCustomerEmail = new SqlParameter("@CustomerEmail", SqlDbType.VarChar, 50);
+			cmdCheckExistingCustomer.Parameters.Add(pCustomerEmail);
+			Customer checkResult = new Customer();
+			bool notCustomer;
+
+			try
+			{
+				dbConnection.Open();
+				pCustomerEmail.Value = custemail;
+				SqlDataReader reader = cmdCheckExistingCustomer.ExecuteReader();
+				if (reader.HasRows)
+				{
+					while (reader.Read())
+					{
+						checkResult.CustomerID = reader.GetInt32(0);
+						checkResult.CustomerName = reader.GetString(1);
+						checkResult.CustomerCountry = reader.GetString(2);
+						checkResult.CustomerEmail = reader.GetString(3);
+						checkResult.CustomerPhone = reader.GetString(4);
+					}
+					return checkResult;
+				}
+				else
+				{
+					return notCustomer = false;
+				}
+			}
+			catch (Exception)
+			{
+				throw;
+			}
+			finally
+			{
+				dbConnection.Close();
+			}
+		}
 	}
 }
