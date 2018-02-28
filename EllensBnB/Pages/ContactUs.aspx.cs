@@ -6,16 +6,48 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+//using System.Data;  // used for xml binding for listOfCountries
+using System.Xml;   // used for xml binding for listOfCountries
+
 namespace EllensBnB.Pages
 {
 	public partial class ContactUs1 : System.Web.UI.Page
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
+            // used for binding XML for listOfCountries
+            if (!IsPostBack)
+            {
+                //this.BindXml();   // 1st version
+               BindXml();          // 2nd version
+            }
+            //DropDownListCountries.DataSource = Enum.GetValues(typeof(EllensCode.EnumOfCountries));
+        }
 
-		}
 
-		protected void MakeNewReservation_Click(object sender, EventArgs e)
+        private void BindXml()
+        {
+            //string filePath = Server.MapPath(@"..\countries.xml");
+            //using (DataSet ds = new DataSet())
+            //{
+            //    //ds.ReadXml(filePath);
+            //    //ddlCountry.DataSource = ds;                
+            //    //ddlCountry.DataTextField = "code";
+            //    //ddlCountry.DataValueField = "iso";
+            //    //ddlCountry.DataBind();
+            //}
+
+            XmlDocument doc = new XmlDocument();
+            doc.Load(Server.MapPath(@"..\countries.xml"));
+
+            foreach (XmlNode node in doc.SelectNodes("//country"))
+            {
+                ddlCountry.Items.Add(new ListItem(node.InnerText, node.Attributes["code"].InnerText));
+            }
+        }
+
+
+        protected void MakeNewReservation_Click(object sender, EventArgs e)
 		{
 
 		}

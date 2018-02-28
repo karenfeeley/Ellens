@@ -246,6 +246,7 @@
     <Content Include="Content\caImages\tn\Tripadvisor2015.jpg" />
     <Content Include="Content\caImages\tn\tripadvisor2016.jpg" />
     <Content Include="Content\Ellen_Styles.css" />
+    <Content Include="countries.xml" />
     <Content Include="Pages\AboutUs.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
@@ -374,6 +375,7 @@
     <Compile Include="EllensCode\Customer.cs" />
     <Compile Include="EllensCode\DBMethods.cs" />
     <Compile Include="EllensCode\EllenCalendar.cs" />
+    <Compile Include="EnumOfCountries.cs" />
     <Compile Include="EllensCode\RoomRateByDate.cs" />
     <Compile Include="Pages\AboutUs.aspx.cs">
       <DependentUpon>AboutUs.aspx</DependentUpon>

@@ -139,6 +139,9 @@
 
 					<asp:Label ID="lblCustomerCountry" runat="server" Text="Country"></asp:Label> &nbsp &nbsp
 					<asp:TextBox ID="txtCustomerCountry" runat="server"></asp:TextBox>
+					<asp:DropDownList ID="ddlCountry" runat="server">
+                        
+                    </asp:DropDownList>
 					<br />
 					
 					<asp:Button ID="CreateNewAccount" runat="server" Text="Create New Account" OnClick="CreateNewAccount_Click" validationgroup="RegisterNewCustomerValidation" />
