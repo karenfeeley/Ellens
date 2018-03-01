@@ -19,10 +19,31 @@
                         <asp:ListItem Value ="Customer distribution list"></asp:ListItem>
                         <asp:ListItem Value ="All bookings by customer"></asp:ListItem>
                     </asp:DropDownList>&nbsp &nbsp
-                        <p>The data grid reports is here.  Column headings will come from individual reports, data binding to be set</p>
+                        <p>The data grid reports is here. Column headings will come from individual reports, data binding to be set</p>
+                    
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:EllensBnBConnectionString %>" SelectCommand="uspGetAllBookings" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="CustomerEmail" DataSourceID="SqlDataSource1" Font-Size="Small" AllowPaging="True" AllowSorting="True">
+                            <Columns>
+                                <asp:BoundField DataField="Date" DataFormatString="{0:dd/MM/yyyy}" HeaderText="Date" ReadOnly="True" SortExpression="Date" />
+                                <asp:BoundField DataField="BookingID" HeaderText="Booking ID" SortExpression="BookingID" />
+                                <asp:BoundField DataField="DateBookingCreated" DataFormatString="{0:dd/MM/yyyy}" HeaderText="Date Created" SortExpression="DateBookingCreated" />
+                                <asp:BoundField DataField="Paid" HeaderText="Paid" SortExpression="Paid" />
+                                <asp:BoundField DataField="RoomID" HeaderText="Room No." SortExpression="RoomID" />
+                                <asp:BoundField DataField="NumberOfGuests" HeaderText="Number Of Guests" SortExpression="NumberOfGuests" />
+                                <asp:BoundField DataField="RoomRate" HeaderText="Room Rate" SortExpression="RoomRate" />
+                                <asp:BoundField DataField="BookingNotes" HeaderText="Notes" SortExpression="BookingNotes" />
+                                <asp:BoundField DataField="RoomName" HeaderText="Room" SortExpression="RoomName" />
+                                <asp:BoundField DataField="CustomerName" HeaderText="Customer" SortExpression="CustomerName" />
+                                <asp:BoundField DataField="CustomerCountry" HeaderText="Country" SortExpression="CustomerCountry" />
+                                <asp:BoundField DataField="CustomerEmail" HeaderText="Email" ReadOnly="True" SortExpression="CustomerEmail" />
+                                <asp:BoundField DataField="CustomerPhone" HeaderText="Phone" SortExpression="CustomerPhone" />
+                            </Columns>
+                            </asp:GridView>
+                            
+                            
                     <!-- Columns to be defined.  8 Options for field types - some below -->
                     
-                    <asp:GridView ID="gvReports" runat="server" AutoGenerateColumns ="false">
+                    <%--<asp:GridView ID="gvReports" runat="server" AutoGenerateColumns ="false">
                         <Columns>                            
                             <asp:Boundfield HeaderText ="Date Selected"/>
                             <asp:BoundField HeaderText ="Room 1" />
@@ -33,7 +54,7 @@
                             <asp:CheckBoxField />
                         </Columns>
                         
-                    </asp:GridView> 
+                    </asp:GridView> --%>
     
                 </ContentTemplate>                
 
