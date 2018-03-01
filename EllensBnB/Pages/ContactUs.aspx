@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/EllensSiteMaster.Master" AutoEventWireup="true" CodeBehind="ContactUs.aspx.cs" Inherits="EllensBnB.Pages.ContactUs1" %>
+﻿<%@  Page Culture ="en-IE" Title="" Language="C#" MasterPageFile="~/EllensSiteMaster.Master" AutoEventWireup="true" CodeBehind="ContactUs.aspx.cs" Inherits="EllensBnB.Pages.ContactUs1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 	<title>Ellen's B&amp;B - Contact Us</title>
 	<meta charset="utf-8">
@@ -37,7 +37,7 @@
 					<asp:ListBox runat="server" ID="lstUserSelectedDates"></asp:ListBox>
 					<asp:Button runat="server" Text="Select Dates" ID="btnSelectDates" OnClick="btnSelectDates_Click" />
 					<asp:Button runat="server" Text="Clear Dates" ID="btnClearDates" OnClick="btnClearDates_Click" />
-					<asp:Button ID="CheckAvailabilitySelectedDates" runat="server" Text="Check Availability" />
+					<asp:Button ID="CheckAvailabilitySelectedDates" runat="server" Text="Check Availability" OnClick="CheckAvailabilitySelectedDates_Click" />
 					
 				</ContentTemplate>
 			</asp:UpdatePanel>
@@ -50,19 +50,35 @@
 				<ContentTemplate>
 					<p>The data grid is here.  Column headings and data binding to be set</p>
 					<!-- Columns to be defined.  8 Options for field types - some below -->
-					
-					<asp:GridView ID="gvAvailability" runat="server" AutoGenerateColumns ="false">
-						<Columns>							
-							<asp:Boundfield HeaderText ="Date Selected"/>
-							<asp:BoundField HeaderText ="Room 1" />
-							<asp:BoundField HeaderText ="Room 2" />
-							<asp:Templatefield></asp:Templatefield>
-							<asp:HyperLinkField />
-							<asp:CommandField />
-							<asp:CheckBoxField />
+
+					<asp:GridView ID="gvAvailability" runat="server" AutoGenerateColumns ="False">
+						<Columns>
+							<asp:BoundField DataField="UserDate" HeaderText="Your selected dates"
+								DataFormatString ="{0:d}" />
+							<asp:BoundField DataField="RoomID" HeaderText="Room" />
+							<asp:BoundField DataField="MaxCapacity" HeaderText="Max Capacity" />
+							<asp:BoundField DataField="RoomRate" HeaderText="Rate" 
+								DataFormatString ="{0:c}"/>
+							<asp:TemplateField HeaderText ="No of Guests">
+								<ItemTemplate>
+									<asp:DropDownList ID="ddlUserGuests" runat="server" 
+										
+										DataField ="NumberOfGuests">
+										
+									</asp:DropDownList>
+								</ItemTemplate>
+							</asp:TemplateField>
+							<asp:TemplateField HeaderText="Select">
+								<ItemTemplate>									
+									<asp:CheckBox ID="cbxUserSelection" runat="server" 
+										checked ='<%# Convert.ToBoolean(Eval("UserSelected")) %>' />									
+								</ItemTemplate>
+							</asp:TemplateField>							
+	
 						</Columns>
-						
-					</asp:GridView> 
+
+					</asp:GridView>
+					 
 					<asp:Label ID="lblCustomerEmail" runat="server" Text="Enter email address:  " validationgroup="UpdatePanelReturnAvailabilityValidation"></asp:Label> &nbsp &nbsp
 					<asp:TextBox ID="txtCustomerEmail" runat="server" validationgroup="UpdatePanelReturnAvailabilityValidation"></asp:TextBox>
 					<br />

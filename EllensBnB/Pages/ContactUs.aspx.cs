@@ -13,6 +13,11 @@ namespace EllensBnB.Pages
 {
 	public partial class ContactUs1 : System.Web.UI.Page
 	{
+		//load data from Rooms Table in DB - to access current pricing, etc.
+		static List<Room> currentRoomData = Room.RoomData();
+		//declare the booking element list to hold the request for this session
+		List<BookingElement> sessionBookingElements = new List<BookingElement>();
+
 		protected void Page_Load(object sender, EventArgs e)
 		{
             // used for binding XML for listOfCountries
@@ -103,8 +108,9 @@ namespace EllensBnB.Pages
 				//browserSelectedDates = (List<DateTime>)Session["SelectedDates"];
 				lstUserSelectedDates.Items.Clear();
 				lstUserSelectedDates.Items.Add("You have selected the following dates: ");
-				lstUserSelectedDates.Items.Add(string.Empty);
+				//lstUserSelectedDates.Items.Add(string.Empty);
 
+				//populate the list display box
 				foreach (DateTime dt in (List<DateTime>)Session["SelectedDates"])
 				{
 					userSelectedDatesForDatabaseQuery.Add(dt.ToShortDateString());
@@ -124,14 +130,39 @@ namespace EllensBnB.Pages
 			userSelectedDatesForDatabaseQuery.Clear();
 		}
 
-        protected void ReserveSelectedRooms_Click(object sender, EventArgs e)
+		protected void CheckAvailabilitySelectedDates_Click(object sender, EventArgs e)
+		{
+			if (Session["SelectedDates"] != null)
+			{
+				//create booking elements for grid view display
+				sessionBookingElements = BookingElement.CreateBookingElementsForUserSelectedDates
+					((List<DateTime>)Session["SelectedDates"], currentRoomData);
+				BookingElement.AddRoomRateByDate(currentRoomData, ref sessionBookingElements);
+				BookingElement.AddAvailabilityToBookingElements(ref sessionBookingElements);
+				var availableBookingElements = (from be in sessionBookingElements
+												where be.RoomAvailable == true
+												select be).ToList<BookingElement>();
+				gvAvailability.DataSource = availableBookingElements;
+				gvAvailability.DataBind();
+				foreach (GridViewRow row in gvAvailability.Rows)
+				{
+					DropDownList dl = (DropDownList)row.FindControl("ddlUserGuests"); 
+					int max = int.Parse(gvAvailability.Rows[row.RowIndex].Cells[2].Text);
+					int[] ddlSource = Enumerable.Range(0, max + 1).ToArray();
+					dl.DataSource = ddlSource;
+					dl.DataBind();
+				}
+				
+				UpdatePanelReturnAvailability.Update();
+			}
+		}
+
+		protected void ReserveSelectedRooms_Click(object sender, EventArgs e)
         {
             //Email TxtBox Validation PT  3
-
             // disable unobtrusive validation
             UnobtrusiveValidationMode =
                 System.Web.UI.UnobtrusiveValidationMode.None;
-
             // if this is not the first time the page is loading
             // (i.e., the user has already submitted form data)
             if (IsPostBack)
@@ -143,12 +174,14 @@ namespace EllensBnB.Pages
                 {
                     // retrieve the values submitted by the user
                     string validEmail = txtCustomerEmail.Text;
-
-
                     // show the submitted values
                     GordTestLabelRESERVE.Text = validEmail;
                 } // end if
             }
+			string customerEmail = txtCustomerEmail.Text;
+
+			int bookingID = DBMethods.CreateBookingID(customerEmail);
+
         }
 
         protected void CreateNewAccount_Click(object sender, EventArgs e)
@@ -179,7 +212,6 @@ namespace EllensBnB.Pages
             }
         }
 
-
-
-    }
+		
+	}
 }

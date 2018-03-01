@@ -375,6 +375,7 @@
     <Compile Include="EllensCode\Customer.cs" />
     <Compile Include="EllensCode\DBMethods.cs" />
     <Compile Include="EllensCode\EllenCalendar.cs" />
+    <Compile Include="EllensCode\Room.cs" />
     <Compile Include="EllensCode\RoomRateByDate.cs" />
     <Compile Include="Pages\AboutUs.aspx.cs">
       <DependentUpon>AboutUs.aspx</DependentUpon>

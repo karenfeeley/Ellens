@@ -16,11 +16,12 @@ namespace EllensBnB.EllensCode
         /*old connectionstring*/
         //static string connectionString = "Server = tcp:karensserver.database.windows.net,1433; Initial Catalog = EllensBnB; Persist Security Info = False; User ID = ellenadminlogin; Password =PCEc2018; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30;";
         
-        static SqlConnection dbConnection = new SqlConnection(connectionString);
+        //static SqlConnection dbConnection = new SqlConnection(connectionString);
 
 		//calls uspGetDatesReserved - no parameters required.  Returns all booked dates and associated roomID
 		public static List<BookedDates> GetDatesReserved()
 		{
+			SqlConnection dbConnection = new SqlConnection(connectionString);
 			SqlCommand getDatesReserved = new SqlCommand("uspGetDatesReserved", dbConnection);
 			getDatesReserved.CommandType = CommandType.StoredProcedure;
 			List<BookedDates> queryResult = new List<BookedDates>();
@@ -49,6 +50,7 @@ namespace EllensBnB.EllensCode
 		public static int CreateBookingID(string custEmail, string paidStatus = null, string bookingNotes = null)
 		{
 			int result;
+			SqlConnection dbConnection = new SqlConnection(connectionString);
 			SqlCommand cmdCreateBookingID = new SqlCommand("uspCreateBookingID", dbConnection);
 			cmdCreateBookingID.CommandType = CommandType.StoredProcedure;
 			SqlParameter customerEmail = new SqlParameter("@CustomerEmail", SqlDbType.VarChar, 50);
@@ -87,6 +89,7 @@ namespace EllensBnB.EllensCode
 		//call uspCreateBookingElements - Create one row in the table
 		public static void CreateBookingElements(int bookingID, int roomID, DateTime date, int guests, decimal rate)
 		{
+			SqlConnection dbConnection = new SqlConnection(connectionString);
 			SqlCommand cmdCreateBookingElements = new SqlCommand("uspCreateBookingElements", dbConnection);
 			cmdCreateBookingElements.CommandType = CommandType.StoredProcedure;
 			SqlParameter pBookingID = new SqlParameter("@BookingID", SqlDbType.Int);
@@ -125,6 +128,7 @@ namespace EllensBnB.EllensCode
 		//call uspCreateBookingElements - Create one or many rows in the table
 		public static void CreateBookingElements(List<BookingElement> bookingElements)
 		{
+			SqlConnection dbConnection = new SqlConnection(connectionString);
 			SqlCommand cmdCreateBookingElements = new SqlCommand("uspCreateBookingElements", dbConnection);
 			cmdCreateBookingElements.CommandType = CommandType.StoredProcedure;
 			SqlParameter pBookingID = new SqlParameter("@BookingID", SqlDbType.Int);
@@ -167,6 +171,7 @@ namespace EllensBnB.EllensCode
 		//call uspRetrieveRoomRate - single date
 		public static decimal RetrieveRoomRate(int roomID, DateTime reservationDate)
 		{
+			SqlConnection dbConnection = new SqlConnection(connectionString);
 			decimal roomrate;
 			SqlCommand cmdRetrieveRoomRate = new SqlCommand("uspRetrieveRoomRate", dbConnection);
 			cmdRetrieveRoomRate.CommandType = CommandType.StoredProcedure;
@@ -204,6 +209,7 @@ namespace EllensBnB.EllensCode
 		//call uspRetrieveRoomRate - single date
 		public static void RetrieveRoomRate(ref List<RoomRateByDate> dates)
 		{
+			SqlConnection dbConnection = new SqlConnection(connectionString);
 			SqlCommand cmdRetrieveRoomRate = new SqlCommand("uspRetrieveRoomRate", dbConnection);
 			cmdRetrieveRoomRate.CommandType = CommandType.StoredProcedure;
 			SqlParameter pRoomID = new SqlParameter("@RoomID", SqlDbType.Int);
@@ -243,6 +249,7 @@ namespace EllensBnB.EllensCode
 		//returns a Customer object if exists and false bool if not existing customer
 		public static dynamic CheckExistingCustomer(string custemail)
 		{
+			SqlConnection dbConnection = new SqlConnection(connectionString);
 			SqlCommand cmdCheckExistingCustomer = new SqlCommand("uspCheckExistingCustomer", dbConnection);
 			cmdCheckExistingCustomer.CommandType = CommandType.StoredProcedure;
 			SqlParameter pCustomerEmail = new SqlParameter("@CustomerEmail", SqlDbType.VarChar, 50);
@@ -286,6 +293,7 @@ namespace EllensBnB.EllensCode
 		//calls uspCreateNewCustomer if not existing
 		public static void CreateNewCustomer(string custEmail, string country, string name, string phone)
 		{
+			SqlConnection dbConnection = new SqlConnection(connectionString);
 			SqlCommand cmdCreateNewCustomer = new SqlCommand("uspCreateNewCustomer", dbConnection);
 			cmdCreateNewCustomer.CommandType = CommandType.StoredProcedure;
 			SqlParameter pCustomerEmail = new SqlParameter("@CustomerEmail", SqlDbType.VarChar, 50);
@@ -320,6 +328,7 @@ namespace EllensBnB.EllensCode
 		//calls uspRetrieveExistingBooking
 		public static List<BookingElement> RetrieveExistingBooking(string email, int bookingID)
 		{
+			SqlConnection dbConnection = new SqlConnection(connectionString);
 			SqlCommand cmdRetrieveExistingBooking = new SqlCommand("uspRetrieveExistingBooking", dbConnection);
 			cmdRetrieveExistingBooking.CommandType = CommandType.StoredProcedure;
 			SqlParameter pCustomerEmail = new SqlParameter("@CustomerEmail", SqlDbType.VarChar, 50);
@@ -367,6 +376,32 @@ namespace EllensBnB.EllensCode
 				dbConnection.Close();
 			}
 			return existingBooking;
+		}
+
+		//call uspGetRoomTableData
+		public static List<Room> GetRoomTableData()
+		{
+			SqlConnection dbConnection = new SqlConnection(connectionString);
+			SqlCommand cmdGetRoomTableData = new SqlCommand("uspGetRoomTableData", dbConnection);
+			cmdGetRoomTableData.CommandType = CommandType.StoredProcedure;
+			List<Room> roomData = new List<Room>();
+			using (dbConnection)
+			{
+				dbConnection.Open();
+				SqlDataReader reader = cmdGetRoomTableData.ExecuteReader();
+				while (reader.Read())
+				{
+					Room r = new Room();
+					r.RoomID = Convert.ToInt32(reader["RoomID"]);
+					r.RoomName = reader["RoomName"].ToString();
+					r.MaxCapacity = Convert.ToInt32(reader["RoomMaxCapacity"]);
+					r.RoomPriceSummer = Convert.ToDecimal(reader["RoomPriceSummer"]);
+					r.RoomPriceWinter = Convert.ToDecimal(reader["RoomPriceWinter"]);
+					roomData.Add(r);
+				}
+			}
+			return roomData;
+
 		}
 
 	}
