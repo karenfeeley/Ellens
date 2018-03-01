@@ -24,13 +24,13 @@
                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:EllensBnBConnectionString %>" SelectCommand="uspGetAllBookings" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
                     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="CustomerEmail" DataSourceID="SqlDataSource1" Font-Size="Small" AllowPaging="True" AllowSorting="True">
                             <Columns>
-                                <asp:BoundField DataField="Date" DataFormatString="{0:dd/MM/yyyy}" HeaderText="Date" ReadOnly="True" SortExpression="Date" />
+                                <asp:BoundField DataField="Date" DataFormatString="{0:d}" HeaderText="Date" ReadOnly="True" SortExpression="Date" />
                                 <asp:BoundField DataField="BookingID" HeaderText="Booking ID" SortExpression="BookingID" />
-                                <asp:BoundField DataField="DateBookingCreated" DataFormatString="{0:dd/MM/yyyy}" HeaderText="Date Created" SortExpression="DateBookingCreated" />
+                                <asp:BoundField DataField="DateBookingCreated" DataFormatString="{0:d}" HeaderText="Date Created" SortExpression="DateBookingCreated" />
                                 <asp:BoundField DataField="Paid" HeaderText="Paid" SortExpression="Paid" />
                                 <asp:BoundField DataField="RoomID" HeaderText="Room No." SortExpression="RoomID" />
                                 <asp:BoundField DataField="NumberOfGuests" HeaderText="Number Of Guests" SortExpression="NumberOfGuests" />
-                                <asp:BoundField DataField="RoomRate" HeaderText="Room Rate" SortExpression="RoomRate" />
+                                <asp:BoundField DataField="RoomRate" HeaderText="Room Rate" SortExpression="RoomRate" DataFormatString="{0:c2}" />
                                 <asp:BoundField DataField="BookingNotes" HeaderText="Notes" SortExpression="BookingNotes" />
                                 <asp:BoundField DataField="RoomName" HeaderText="Room" SortExpression="RoomName" />
                                 <asp:BoundField DataField="CustomerName" HeaderText="Customer" SortExpression="CustomerName" />
