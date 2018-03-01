@@ -47,7 +47,7 @@ namespace EllensBnB.EllensCode
 		}
 		
 		//call uspCreateBookingID
-		public static int CreateBookingID(string custEmail, string paidStatus = null, string bookingNotes = null)
+		public static int CreateBookingID(string custEmail, string bookingNotes = null, string paidStatus = null)
 		{
 			int result;
 			SqlConnection dbConnection = new SqlConnection(connectionString);
@@ -276,7 +276,8 @@ namespace EllensBnB.EllensCode
 				}
 				else
 				{
-					return notCustomer = false;
+					notCustomer = false;
+					return notCustomer.ToString();
 				}
 			}
 			catch (Exception)

@@ -17,6 +17,8 @@ namespace EllensBnB.Pages
 		static List<Room> currentRoomData = Room.RoomData();
 		//declare the booking element list to hold the request for this session
 		List<BookingElement> sessionBookingElements = new List<BookingElement>();
+		int bookingID = 0;
+		string customerEmail;
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
@@ -139,20 +141,19 @@ namespace EllensBnB.Pages
 					((List<DateTime>)Session["SelectedDates"], currentRoomData);
 				BookingElement.AddRoomRateByDate(currentRoomData, ref sessionBookingElements);
 				BookingElement.AddAvailabilityToBookingElements(ref sessionBookingElements);
-				var availableBookingElements = (from be in sessionBookingElements
-												where be.RoomAvailable == true
-												select be).ToList<BookingElement>();
-				gvAvailability.DataSource = availableBookingElements;
+				//List<BookingElement> availableBookingElements = 
+				BookingElement.BookingElementsWithAvailability(ref sessionBookingElements);
+				gvAvailability.DataSource = sessionBookingElements;
 				gvAvailability.DataBind();
 				foreach (GridViewRow row in gvAvailability.Rows)
 				{
-					DropDownList dl = (DropDownList)row.FindControl("ddlUserGuests"); 
+					DropDownList dl = (DropDownList)row.FindControl("ddlUserGuests");
 					int max = int.Parse(gvAvailability.Rows[row.RowIndex].Cells[2].Text);
 					int[] ddlSource = Enumerable.Range(0, max + 1).ToArray();
 					dl.DataSource = ddlSource;
 					dl.DataBind();
 				}
-				
+
 				UpdatePanelReturnAvailability.Update();
 			}
 		}
@@ -178,9 +179,48 @@ namespace EllensBnB.Pages
                     GordTestLabelRESERVE.Text = validEmail;
                 } // end if
             }
-			string customerEmail = txtCustomerEmail.Text;
+			//Retrieve date from the gridview and create new BookingElement List
+			List<BookingElement> userSelectedBookingElements = new List<BookingElement>();
+			foreach (GridViewRow row in gvAvailability.Rows)
+			{
+				CheckBox cb = (CheckBox)row.FindControl("cbxUserSelection");
+				if (cb!=null && cb.Checked)
+				{
+					BookingElement b = new BookingElement();
+					b.UserDate = Convert.ToDateTime(gvAvailability.Rows[row.RowIndex].Cells[0].Text);
+					b.RoomID = Convert.ToInt32(gvAvailability.Rows[row.RowIndex].Cells[1].Text);
+					DropDownList dl = (DropDownList)row.FindControl("ddlUserGuests");
+					b.NumberOfGuests = Convert.ToInt32(dl.SelectedItem.Text);
+					userSelectedBookingElements.Add(b);
+				}
+				
+			}
 
-			int bookingID = DBMethods.CreateBookingID(customerEmail);
+			//add back in room rates for selected dates 
+			BookingElement.AddRoomRateByDate(currentRoomData, ref userSelectedBookingElements);
+
+			//Add any booking notes to each element			
+			if (!string.IsNullOrEmpty(txtCustomerBookingNotes.Text) && 
+				userSelectedBookingElements.Count > 0)
+			{
+				BookingElement.AddBookingNotesToBookingElements(txtCustomerBookingNotes.Text,
+					ref userSelectedBookingElements);
+			}
+
+			//check if customer exists and if yes, capture relevant data
+			customerEmail = txtCustomerEmail.Text;
+			if (DBMethods.CheckExistingCustomer(customerEmail).ToString() == "false")
+			{
+				UpdatePanelRegisterNewCustomer.Visible = true;
+			}
+			if (userSelectedBookingElements.Count > 0)
+			{
+				bookingID = DBMethods.CreateBookingID(customerEmail, txtCustomerBookingNotes.Text);
+				BookingElement.AddingBookingIDToBookingElements(bookingID, ref userSelectedBookingElements);
+				DBMethods.CreateBookingElements(userSelectedBookingElements);
+				BookingIDReference.InnerHtml = bookingID.ToString();
+			}			
+			
 
         }
 
@@ -205,12 +245,17 @@ namespace EllensBnB.Pages
                     string validName = txtCustomerName.Text;
                     string validPhoneNUmber = txtCustomerPhone.Text;
 
-
                     // show the submitted values                                       ///  seems to want the whole page to be valid to carry out next command !!
                     GordTestLabelNewCustomer.Text = validName + " " + validPhoneNUmber;
                 } // end if
             }
-        }
+			string name = txtCustomerName.Text;
+			string country = ddlCountry.SelectedItem.ToString();
+			string phone = txtCustomerPhone.Text;
+			DBMethods.CreateNewCustomer(customerEmail, country, name, phone);
+			BookingIDReference.InnerHtml = bookingID.ToString();
+
+		}
 
 		
 	}

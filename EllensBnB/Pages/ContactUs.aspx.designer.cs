@@ -121,6 +121,15 @@ namespace EllensBnB.Pages {
         protected global::System.Web.UI.WebControls.GridView gvAvailability;
         
         /// <summary>
+        /// txtCustomerBookingNotes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCustomerBookingNotes;
+        
+        /// <summary>
         /// lblCustomerEmail control.
         /// </summary>
         /// <remarks>
@@ -175,13 +184,13 @@ namespace EllensBnB.Pages {
         protected global::System.Web.UI.WebControls.Label GordTestLabelRESERVE;
         
         /// <summary>
-        /// RegisterNewCustomer control.
+        /// UpdatePanelRegisterNewCustomer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel RegisterNewCustomer;
+        protected global::System.Web.UI.UpdatePanel UpdatePanelRegisterNewCustomer;
         
         /// <summary>
         /// lblEnteredCustomerEmail control.
@@ -265,15 +274,6 @@ namespace EllensBnB.Pages {
         protected global::System.Web.UI.WebControls.Label lblCustomerCountry;
         
         /// <summary>
-        /// txtCustomerCountry control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCustomerCountry;
-        
-        /// <summary>
         /// ddlCountry control.
         /// </summary>
         /// <remarks>
@@ -292,105 +292,6 @@ namespace EllensBnB.Pages {
         protected global::System.Web.UI.WebControls.Button CreateNewAccount;
         
         /// <summary>
-        /// BookingData control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel BookingData;
-        
-        /// <summary>
-        /// lblTaraSuite control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTaraSuite;
-        
-        /// <summary>
-        /// drpTaraSuite control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drpTaraSuite;
-        
-        /// <summary>
-        /// lblLirSuite control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLirSuite;
-        
-        /// <summary>
-        /// drpLirSuite control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drpLirSuite;
-        
-        /// <summary>
-        /// lblBoyneSuite control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblBoyneSuite;
-        
-        /// <summary>
-        /// drpBoyneSuite control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drpBoyneSuite;
-        
-        /// <summary>
-        /// lblKellsSuite control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblKellsSuite;
-        
-        /// <summary>
-        /// drpKellsSuite control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drpKellsSuite;
-        
-        /// <summary>
-        /// txtCustomerBookingNotes control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCustomerBookingNotes;
-        
-        /// <summary>
-        /// ConfirmBooking control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ConfirmBooking;
-        
-        /// <summary>
         /// UpdatePanelBookingConfirmation control.
         /// </summary>
         /// <remarks>
@@ -398,5 +299,14 @@ namespace EllensBnB.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanelBookingConfirmation;
+        
+        /// <summary>
+        /// BookingIDReference control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl BookingIDReference;
     }
 }

@@ -41,9 +41,6 @@
 					
 				</ContentTemplate>
 			</asp:UpdatePanel>
-
-
-
        	
 		
 		<asp:UpdatePanel ID="UpdatePanelReturnAvailability" runat="server" UpdateMode="Conditional">
@@ -78,6 +75,10 @@
 						</Columns>
 
 					</asp:GridView>
+					<br /> 
+					<p>Add any additional notes or comments here (e.g. Early or late arrival, allergies, etc.):</p>
+					<asp:TextBox ID="txtCustomerBookingNotes" runat="server"></asp:TextBox>
+					<br />
 					 
 					<asp:Label ID="lblCustomerEmail" runat="server" Text="Enter email address:  " validationgroup="UpdatePanelReturnAvailabilityValidation"></asp:Label> &nbsp &nbsp
 					<asp:TextBox ID="txtCustomerEmail" runat="server" validationgroup="UpdatePanelReturnAvailabilityValidation"></asp:TextBox>
@@ -86,9 +87,7 @@
 
 					<asp:Button ID="ReserveSelectedRooms" runat="server" Text="ReserveSelectedRooms" OnClick="ReserveSelectedRooms_Click" validationgroup="UpdatePanelReturnAvailabilityValidation"/>
 					<br />
-
-
-
+					
                      <!--  Email TxtBox Validation PT  1 -->                         <!--not in use............enableclientscript="false" -->
                      <asp:RequiredFieldValidator    
                                     ID="nameRequiredFieldValidator"         runat="server" 
@@ -110,11 +109,8 @@
 					<asp:Label ID="GordTestLabelRESERVE" runat="server" Text="Label"></asp:Label>
 				</ContentTemplate>
 			</asp:UpdatePanel>
-
-
-
-			
-			<asp:UpdatePanel ID="RegisterNewCustomer" runat="server">
+						
+			<asp:UpdatePanel ID="UpdatePanelRegisterNewCustomer" runat="server">
 				<ContentTemplate>
 					<asp:Label ID="lblEnteredCustomerEmail" runat="server" Text="">
 						The inner HTML on this label needs to be set to the customer email provided
@@ -122,8 +118,7 @@
 					<br />
 					<asp:Label ID="lblCustomerName" runat="server" Text="Name:  "></asp:Label> &nbsp &nbsp
 					<asp:TextBox ID="txtCustomerName" runat="server" validationgroup="RegisterNewCustomerValidation"></asp:TextBox>
-					<br />
-                                        			
+					<br />                                        			
 			
                     <!--  txtCustomerName Validation PT  1 -->
                      <asp:RequiredFieldValidator    
@@ -134,11 +129,9 @@
                             ></asp:RequiredFieldValidator>
 					<br />
 
-
 					<asp:Label ID="lblCustomerPhone" runat="server" Text="Telephone:  "></asp:Label> &nbsp &nbsp
 					<asp:TextBox ID="txtCustomerPhone" runat="server" validationgroup="RegisterNewCustomerValidation"></asp:TextBox>
 					<br />
-
 
                       <!--  txtPhoneNo Validation PT  1 -->
                      <asp:RequiredFieldValidator    
@@ -150,11 +143,7 @@
 					<br />
 					<asp:Label ID="GordTestLabelNewCustomer" runat="server" Text="Label"></asp:Label>
 
-
-
-
 					<asp:Label ID="lblCustomerCountry" runat="server" Text="Country"></asp:Label> &nbsp &nbsp
-					<asp:TextBox ID="txtCustomerCountry" runat="server"></asp:TextBox>
 					<asp:DropDownList ID="ddlCountry" runat="server">
                         
                     </asp:DropDownList>
@@ -164,54 +153,14 @@
 				</ContentTemplate>
 
 			</asp:UpdatePanel>
-
-
-                        
-			<asp:UpdatePanel ID="BookingData" runat="server">
-				<ContentTemplate>
-					<p>Confirm number of guests for selected room(s):</p>
-					<asp:Label ID="lblTaraSuite" runat="server" Text="Tara Suite"></asp:Label> &nbsp &nbsp
-					<asp:DropDownList ID="drpTaraSuite" runat="server" Width="50px">
-						<asp:ListItem Value="0"></asp:ListItem>
-						<asp:ListItem Value ="1"></asp:ListItem>
-					</asp:DropDownList>&nbsp &nbsp
-					<asp:Label ID="lblLirSuite" runat="server" Text="Lir Suite"></asp:Label>&nbsp &nbsp
-					<asp:DropDownList ID="drpLirSuite" runat="server" Width="50px">
-						<asp:ListItem Value="0"></asp:ListItem>
-						<asp:ListItem Value ="1"></asp:ListItem>
-						<asp:ListItem Value ="2"></asp:ListItem>
-					</asp:DropDownList>&nbsp &nbsp
-					<asp:Label ID="lblBoyneSuite" runat="server" Text="Boyne Suite"></asp:Label>&nbsp &nbsp
-					<asp:DropDownList ID="drpBoyneSuite" runat="server" Width="50px">
-						<asp:ListItem Value="0"></asp:ListItem>
-						<asp:ListItem Value ="1"></asp:ListItem>
-						<asp:ListItem Value ="2"></asp:ListItem>
-						<asp:ListItem Value ="3"></asp:ListItem>
-					</asp:DropDownList>&nbsp &nbsp
-					<asp:Label ID="lblKellsSuite" runat="server" Text="Kells Suite"></asp:Label>&nbsp &nbsp
-					<asp:DropDownList ID="drpKellsSuite" runat="server" Width="50px">
-						<asp:ListItem Value="0"></asp:ListItem>
-						<asp:ListItem Value ="1"></asp:ListItem>
-						<asp:ListItem Value ="2"></asp:ListItem>
-						<asp:ListItem Value ="3"></asp:ListItem>
-						<asp:ListItem Value ="4"></asp:ListItem>
-					</asp:DropDownList>&nbsp &nbsp
-					<br />
-					<p>Add any additional notes or comments here (e.g. Early or late arrival, allergies, etc.):</p>
-					<asp:TextBox ID="txtCustomerBookingNotes" runat="server"></asp:TextBox>
-					<br />
-					<asp:Button ID="ConfirmBooking" runat="server" Text="Confirm Booking" />
-
-				</ContentTemplate>				
-
-			</asp:UpdatePanel>
+			
 			<asp:UpdatePanel ID="UpdatePanelBookingConfirmation" runat="server">
 				<ContentTemplate>
 					<h2>Thank you for your reservation.</h2>
-					<p>Your booking reference number is: <span id="BookingIDreference">0</span></p>
+					<p>Your booking reference number is: <span runat="server" id="BookingIDReference">0</span></p>
 				</ContentTemplate>
 
-			</asp:UpdatePanel>
+			</asp:UpdatePanel> 
 
 
 		</div>

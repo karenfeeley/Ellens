@@ -104,36 +104,27 @@ namespace EllensBnB.EllensCode
 
 		}
 
-		public override string ToString()
+		public static void BookingElementsWithAvailability(ref List<BookingElement> bookingElements)
 		{
-			StringBuilder sb = new StringBuilder();
-			sb.Append(ReservationDate);
-			sb.Append(", ");
-			sb.Append(BookingID);
-			sb.Append(", ");
-			sb.Append(DateBookingCreated);
-			sb.Append(", ");
-			sb.Append(Paid);
-			sb.Append(", ");
-			sb.Append(RoomID);
-			sb.Append(", ");
-			sb.Append(NumberOfGuests);
-			sb.Append(", ");
-			sb.Append(RoomRate);
-			sb.Append(", ");
-			sb.Append(BookingNotes);
-			sb.Append(", ");
-			sb.Append(RoomName);
-			sb.Append(", ");
-			sb.Append(CustomerName);
-			sb.Append(", ");
-			sb.Append(CustomerCountry);
-			sb.Append(", ");
-			sb.Append(CustomerEmail);
-			sb.Append(", ");
-			sb.Append(CustomerPhone);
+			bookingElements = (from be in bookingElements
+								where be.RoomAvailable == true
+								select be).ToList<BookingElement>();
+		}
 
-			return sb.ToString();
+		public static void AddBookingNotesToBookingElements(string notes, ref List<BookingElement> bookingElements)
+		{
+			foreach (BookingElement be in bookingElements)
+			{
+				be.BookingNotes = notes;
+			}
+		}
+
+		public static void AddingBookingIDToBookingElements(int id, ref List<BookingElement> bookingElements)
+		{
+			foreach (BookingElement be in bookingElements)
+			{
+				be.BookingID = id;
+			}
 		}
 	}
 }
