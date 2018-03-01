@@ -151,9 +151,10 @@ namespace EllensBnB.EllensCode
 					pDate.Value = bookingElement.ReservationDate;
 					pGuest.Value = bookingElement.NumberOfGuests;
 					pRate.Value = bookingElement.RoomRate;
+					cmdCreateBookingElements.ExecuteNonQuery();
 				}
 
-				cmdCreateBookingElements.ExecuteNonQuery();
+				
 
 			}
 			catch (Exception)
