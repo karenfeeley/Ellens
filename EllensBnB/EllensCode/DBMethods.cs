@@ -330,54 +330,62 @@ namespace EllensBnB.EllensCode
 		//calls uspRetrieveExistingBooking
 		public static List<BookingElement> RetrieveExistingBooking(string email, int bookingID)
 		{
-			SqlConnection dbConnection = new SqlConnection(connectionString);
-			SqlCommand cmdRetrieveExistingBooking = new SqlCommand("uspRetrieveExistingBooking", dbConnection);
-			cmdRetrieveExistingBooking.CommandType = CommandType.StoredProcedure;
-			SqlParameter pCustomerEmail = new SqlParameter("@CustomerEmail", SqlDbType.VarChar, 50);
-			SqlParameter pBookingID = new SqlParameter("@BookingID", SqlDbType.Int);
-			cmdRetrieveExistingBooking.Parameters.Add(pBookingID);
-			cmdRetrieveExistingBooking.Parameters.Add(pCustomerEmail);
-
-
-			List<BookingElement> existingBooking = new List<BookingElement>();
-			try
+			if (String.IsNullOrEmpty(email) || bookingID == 0)
 			{
-				dbConnection.Open();
-				pBookingID.Value = bookingID;
-				pCustomerEmail.Value = email;
-				SqlDataReader reader = cmdRetrieveExistingBooking.ExecuteReader();
-				if (reader.HasRows)
-				{
-					while (reader.Read())
-					{
+				List<BookingElement> empty = new List<BookingElement>();
+				return empty;
+			}
+			else
+			{
+				SqlConnection dbConnection = new SqlConnection(connectionString);
+				SqlCommand cmdRetrieveExistingBooking = new SqlCommand("uspRetrieveExistingBooking", dbConnection);
+				cmdRetrieveExistingBooking.CommandType = CommandType.StoredProcedure;
+				SqlParameter pCustomerEmail = new SqlParameter("@CustomerEmail", SqlDbType.VarChar, 50);
+				SqlParameter pBookingID = new SqlParameter("@BookingID", SqlDbType.Int);
+				cmdRetrieveExistingBooking.Parameters.Add(pBookingID);
+				cmdRetrieveExistingBooking.Parameters.Add(pCustomerEmail);
 
-						BookingElement b = new BookingElement();
-						b.ReservationDate = reader.GetDateTime(0);
-						b.BookingID = reader.GetInt32(1);
-						b.DateBookingCreated = reader.GetDateTime(2);
-						b.Paid = reader.GetString(3);
-						b.RoomID = reader.GetInt32(4);
-						b.NumberOfGuests = reader.GetInt32(5);
-						b.RoomRate = reader.GetDecimal(6);
-						b.BookingNotes = reader.GetString(7);
-						b.RoomName = reader.GetString(8);
-						b.CustomerName = reader.GetString(9);
-						b.CustomerCountry = reader.GetString(10);
-						b.CustomerEmail = reader.GetString(11);
-						b.CustomerPhone = reader.GetString(12);
-						existingBooking.Add(b);
+
+				List<BookingElement> existingBooking = new List<BookingElement>();
+				try
+				{
+					dbConnection.Open();
+					pBookingID.Value = bookingID;
+					pCustomerEmail.Value = email;
+					SqlDataReader reader = cmdRetrieveExistingBooking.ExecuteReader();
+					if (reader.HasRows)
+					{
+						while (reader.Read())
+						{
+
+							BookingElement b = new BookingElement();
+							b.ReservationDate = reader.GetDateTime(0);
+							b.BookingID = reader.GetInt32(1);
+							b.DateBookingCreated = reader.GetDateTime(2);
+							b.Paid = reader.GetString(3);
+							b.RoomID = reader.GetInt32(4);
+							b.NumberOfGuests = reader.GetInt32(5);
+							b.RoomRate = reader.GetDecimal(6);
+							b.BookingNotes = reader.GetString(7);
+							b.RoomName = reader.GetString(8);
+							b.CustomerName = reader.GetString(9);
+							b.CustomerCountry = reader.GetString(10);
+							b.CustomerEmail = reader.GetString(11);
+							b.CustomerPhone = reader.GetString(12);
+							existingBooking.Add(b);
+						}
 					}
 				}
+				catch (Exception)
+				{
+					throw;
+				}
+				finally
+				{
+					dbConnection.Close();
+				}
+				return existingBooking;
 			}
-			catch (Exception)
-			{
-				throw;
-			}
-			finally
-			{
-				dbConnection.Close();
-			}
-			return existingBooking;
 		}
 
 		//call uspGetRoomTableData

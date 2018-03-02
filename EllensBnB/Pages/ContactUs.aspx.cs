@@ -29,10 +29,10 @@ namespace EllensBnB.Pages
                BindXml();          // 2nd version
             }
 			//DropDownListCountries.DataSource = Enum.GetValues(typeof(EllensCode.EnumOfCountries));
-			UpdatePanelCalendar.Visible = false;
-			UpdatePanelReturnAvailability.Visible = false;
-			UpdatePanelRegisterNewCustomer.Visible = false;
-			UpdatePanelBookingConfirmation.Visible = false;
+			//UpdatePanelCalendar.Visible = false;
+			//UpdatePanelReturnAvailability.Visible = false;
+			//UpdatePanelRegisterNewCustomer.Visible = false;
+			//UpdatePanelBookingConfirmation.Visible = false;
 			
 
         }

@@ -176,7 +176,8 @@
 						BookingNotes: <asp:Label runat="server" ID="lblRetrieveBookingNotes"></asp:Label>
 						<br />
 					</p>
-					<asp:GridView ID="gvRetrieveBooking" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1">
+					<asp:GridView ID="gvRetrieveBooking" runat="server" AutoGenerateColumns="False" 
+						DataSourceID="dsRetrieveBooking">
 						
 						<Columns>
 							<asp:BoundField DataField="BookingID" HeaderText="BookingID" SortExpression="BookingID" />
