@@ -28,7 +28,7 @@ namespace EllensBnB.Pages
                 //this.BindXml();   // 1st version
                 BindXml();          // 2nd version
 
-				
+				//UpdatePanelRetrieveBooking.Visible = false;
 			}
 
 			//All update panels not visible to start - appear on button click events
