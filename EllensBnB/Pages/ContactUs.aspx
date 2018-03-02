@@ -14,6 +14,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 	<button onclick="topFunction()" id="topBtn" title="Go to top">Top</button>
     <div role ="main" id="leftcol">
+<<<<<<< HEAD
         <asp:SiteMapPath ID="SiteMapPath1" Runat="server"></asp:SiteMapPath><br />
 		<div>
 			<asp:Button ID="MakeNewReservation" runat="server" Text="Make New Reservation" CssClass="bookingOptions" OnClick="MakeNewReservation_Click" />
@@ -22,12 +23,27 @@
 		</div>
 
 		<div ID="panels">
+=======
+        <asp:SiteMapPath ID="SiteMapPath1" Runat="server"></asp:SiteMapPath>
+		<asp:ScriptManager ID="ScriptManager1" runat="server">
+		</asp:ScriptManager>
+		
+		<asp:UpdatePanel ID ="UpdatePanelMainButtons" runat ="server" UpdateMode ="Conditional">
+			<ContentTemplate>
+				<asp:Button ID="MakeNewReservation" runat="server" Text="Make New Reservation" 
+				CssClass="bookingOption" OnClick="MakeNewReservation_Click" />
+				<asp:Button ID="RetrieveExistingReservation" runat="server" Text="Retrieve Existing Reservation" 
+				CssClass ="bookingOption" OnClick="RetrieveExistingReservation_Click"/>
+			
+			</ContentTemplate>
+		</asp:UpdatePanel>
+		
+		<div id="panels">
+>>>>>>> 2638cb859810464dc8fc9aacd635d755253281bd
 			<!--Default on all to be set to invisible-->
 			<!--Appear when user clicks Make New Reservation button-->
 			
 
-			<asp:ScriptManager ID="ScriptManager1" runat="server">
-			</asp:ScriptManager>
 
 
 			<asp:UpdatePanel ID="UpdatePanelCalendar" runat="server" UpdateMode="Conditional">
@@ -104,7 +120,7 @@
 				</ContentTemplate>
 			</asp:UpdatePanel>
 						
-			<asp:UpdatePanel ID="UpdatePanelRegisterNewCustomer" runat="server">
+			<asp:UpdatePanel ID="UpdatePanelRegisterNewCustomer" runat="server" UpdateMode="Conditional">
 				<ContentTemplate>
 					<asp:Label ID="lblEnteredCustomerEmail" runat="server" Text="">
 						The inner HTML on this label needs to be set to the customer email provided
@@ -148,7 +164,7 @@
 
 			</asp:UpdatePanel>
 			
-			<asp:UpdatePanel ID="UpdatePanelBookingConfirmation" runat="server">
+			<asp:UpdatePanel ID="UpdatePanelBookingConfirmation" runat="server" UpdateMode="Conditional">
 				<ContentTemplate>
 					<h2>Thank you for your reservation.</h2>
 					<p>Your booking reference number is: <span runat="server" id="BookingIDReference">0</span></p>
@@ -156,7 +172,7 @@
 
 			</asp:UpdatePanel> 
 
-			<asp:UpdatePanel ID ="UpdatePanelRetrieveBooking" runat="server">
+			<asp:UpdatePanel ID ="UpdatePanelRetrieveBooking" runat="server" UpdateMode="Conditional">
 				<ContentTemplate>
 					<asp:Label ID="lblRetrieveBookingEmail" runat="server" Text="Email"></asp:Label>
 					&nbsp;&nbsp;<asp:TextBox ID="txtRetrieveBookingEmail" runat="server"></asp:TextBox>
@@ -166,7 +182,7 @@
 					<asp:TextBox ID="txtRetrieveBookingID" runat="server"></asp:TextBox>
 					&nbsp;&nbsp;
 					<asp:Button ID="btnRetrieveBooking" runat="server" Text="Retrieve Booking" OnClick="btnRetrieveBooking_Click" />
-					<p>Reservation information: <br />
+					<p runat ="server" id ="pReservationInformation">Reservation information: <br />
 						Guest Name: <asp:Label runat="server" ID="lblRetrieveName"></asp:Label>
 						<br />
 						Guest Country: <asp:Label runat="server" ID ="lblRetrieveCountry"></asp:Label>
@@ -176,13 +192,20 @@
 						BookingNotes: <asp:Label runat="server" ID="lblRetrieveBookingNotes"></asp:Label>
 						<br />
 					</p>
-					<asp:GridView ID="gvRetrieveBooking" runat="server" AutoGenerateColumns="False">
+					<asp:GridView ID="gvRetrieveBooking" runat="server" AutoGenerateColumns="False" DataSourceID="dsRetrieveBooking">
+						
+						<Columns>
+							<asp:BoundField DataField="RoomName" HeaderText="RoomName" SortExpression="RoomName" />
+							<asp:BoundField DataField="ReservationDate" HeaderText="ReservationDate" SortExpression="ReservationDate" />
+							<asp:BoundField DataField="NumberOfGuests" HeaderText="NumberOfGuests" SortExpression="NumberOfGuests" />
+							<asp:BoundField DataField="RoomRate" HeaderText="RoomRate" SortExpression="RoomRate" />
+						</Columns>
 						
 					</asp:GridView>
 					<asp:ObjectDataSource ID="dsRetrieveBooking" runat="server" SelectMethod="RetrieveBookingDetails" TypeName="EllensBnB.EllensCode.BookingElement">
 						<SelectParameters>
-							<asp:FormParameter FormField="txtRetrieveBookingEmail" Name="email" Type="String" />
-							<asp:FormParameter FormField="txtRetrieveBookingID" Name="bookingID" Type="String" />
+							<asp:ControlParameter ControlID="txtRetrieveBookingEmail" Name="email" PropertyName="Text" Type="String" />
+							<asp:ControlParameter ControlID="txtRetrieveBookingID" Name="bookingID" PropertyName="Text" Type="String" />
 						</SelectParameters>
 					</asp:ObjectDataSource>
 				</ContentTemplate>
