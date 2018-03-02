@@ -14,14 +14,14 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 	<button onclick="topFunction()" id="topBtn" title="Go to top">Top</button>
     <div role ="main" id="leftcol">
-        <asp:SiteMapPath ID="SiteMapPath1" Runat="server"></asp:SiteMapPath>
-		<div class="bookingOption">
-			<asp:Button ID="MakeNewReservation" runat="server" Text="Make New Reservation" CssClass="bookingOption" OnClick="MakeNewReservation_Click" />
+        <asp:SiteMapPath ID="SiteMapPath1" Runat="server"></asp:SiteMapPath><br />
+		<div>
+			<asp:Button ID="MakeNewReservation" runat="server" Text="Make New Reservation" CssClass="bookingOptions" OnClick="MakeNewReservation_Click" />
 			<asp:Button ID="UpdateExistingReservation" runat="server" Text="Update Existing Reservation" CssClass ="bookingOption" OnClick="UpdateExistingReservation_Click"/>
 			
 		</div>
 
-		<div id="panels">
+		<div ID="panels">
 			<!--Default on all to be set to invisible-->
 			<!--Appear when user clicks Make New Reservation button-->
 			
