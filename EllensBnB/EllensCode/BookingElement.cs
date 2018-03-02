@@ -126,5 +126,11 @@ namespace EllensBnB.EllensCode
 				be.BookingID = id;
 			}
 		}
+
+		public static List<BookingElement> RetrieveBookingDetails(string email, string bookingID)
+		{
+			List<BookingElement> existingBooking = DBMethods.RetrieveExistingBooking(email, Convert.ToInt32(bookingID));
+			return existingBooking;
+		}
 	}
 }

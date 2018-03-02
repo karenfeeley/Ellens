@@ -28,7 +28,13 @@ namespace EllensBnB.Pages
                 //this.BindXml();   // 1st version
                BindXml();          // 2nd version
             }
-            //DropDownListCountries.DataSource = Enum.GetValues(typeof(EllensCode.EnumOfCountries));
+			//DropDownListCountries.DataSource = Enum.GetValues(typeof(EllensCode.EnumOfCountries));
+			UpdatePanelCalendar.Visible = false;
+			UpdatePanelReturnAvailability.Visible = false;
+			UpdatePanelRegisterNewCustomer.Visible = false;
+			UpdatePanelBookingConfirmation.Visible = false;
+			
+
         }
 
 
@@ -257,6 +263,24 @@ namespace EllensBnB.Pages
 
 		}
 
-		
+		protected void btnRetrieveBooking_Click(object sender, EventArgs e)
+		{
+			lblRetrieveName.Visible = false;
+			lblRetrieveCountry.Visible = false;
+			lblRetrievePhone.Visible = false;
+			lblRetrieveBookingNotes.Visible = false;
+			string email = txtRetrieveBookingEmail.Text;
+			string id = txtRetrieveBookingID.Text;
+			List<BookingElement> booking = BookingElement.RetrieveBookingDetails(email, id);
+			lblRetrieveName.Text = booking[0].CustomerName;
+			lblRetrieveCountry.Text = booking[0].CustomerCountry;
+			lblRetrievePhone.Text = booking[0].CustomerPhone;
+			lblRetrieveBookingNotes.Text = booking[0].BookingNotes;
+			lblRetrieveName.Visible = true;
+			lblRetrieveCountry.Visible = true;
+			lblRetrievePhone.Visible = true;
+			lblRetrieveBookingNotes.Visible = true;
+
+		}
 	}
 }

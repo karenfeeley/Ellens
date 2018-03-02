@@ -33,10 +33,13 @@
 			<asp:UpdatePanel ID="UpdatePanelCalendar" runat="server" UpdateMode="Conditional">
 				<ContentTemplate>
 					<p class = "bookingOption">Please select dates to check room availibility</p>					
-					<asp:Calendar ID="EllensWebCalendar" runat="server" OnDayRender="EllensCalendar_DayRender" OnSelectionChanged="EllensCalendar_SelectionChanged"></asp:Calendar>
-					<asp:ListBox runat="server" ID="lstUserSelectedDates"></asp:ListBox>
+					<asp:Calendar ID="EllensWebCalendar" runat="server" OnDayRender="EllensCalendar_DayRender" OnSelectionChanged="EllensCalendar_SelectionChanged" Width="835px"></asp:Calendar>
+					<asp:ListBox runat="server" ID="lstUserSelectedDates" Width="260px"></asp:ListBox>
+					&nbsp;
 					<asp:Button runat="server" Text="Select Dates" ID="btnSelectDates" OnClick="btnSelectDates_Click" />
+					&nbsp;&nbsp;
 					<asp:Button runat="server" Text="Clear Dates" ID="btnClearDates" OnClick="btnClearDates_Click" />
+					&nbsp;&nbsp;
 					<asp:Button ID="CheckAvailabilitySelectedDates" runat="server" Text="Check Availability" OnClick="CheckAvailabilitySelectedDates_Click" />
 					
 				</ContentTemplate>
@@ -45,9 +48,7 @@
 		
 		<asp:UpdatePanel ID="UpdatePanelReturnAvailability" runat="server" UpdateMode="Conditional">
 				<ContentTemplate>
-					<p>The data grid is here.  Column headings and data binding to be set</p>
-					<!-- Columns to be defined.  8 Options for field types - some below -->
-
+					
 					<asp:GridView ID="gvAvailability" runat="server" AutoGenerateColumns ="False">
 						<Columns>
 							<asp:BoundField DataField="UserDate" HeaderText="Your selected dates"
@@ -58,10 +59,8 @@
 								DataFormatString ="{0:c}"/>
 							<asp:TemplateField HeaderText ="No of Guests">
 								<ItemTemplate>
-									<asp:DropDownList ID="ddlUserGuests" runat="server" 
-										
-										DataField ="NumberOfGuests">
-										
+									<asp:DropDownList ID="ddlUserGuests" runat="server" 										
+										DataField ="NumberOfGuests">										
 									</asp:DropDownList>
 								</ItemTemplate>
 							</asp:TemplateField>
@@ -70,21 +69,16 @@
 									<asp:CheckBox ID="cbxUserSelection" runat="server" 
 										checked ='<%# Convert.ToBoolean(Eval("UserSelected")) %>' />									
 								</ItemTemplate>
-							</asp:TemplateField>							
-	
+							</asp:TemplateField>	
 						</Columns>
-
 					</asp:GridView>
 					<br /> 
 					<p>Add any additional notes or comments here (e.g. Early or late arrival, allergies, etc.):</p>
-					<asp:TextBox ID="txtCustomerBookingNotes" runat="server"></asp:TextBox>
-					<br />
-					 
+					<asp:TextBox ID="txtCustomerBookingNotes" runat="server" Height="69px" Width="852px"></asp:TextBox>
+					<br />					 
 					<asp:Label ID="lblCustomerEmail" runat="server" Text="Enter email address:  " validationgroup="UpdatePanelReturnAvailabilityValidation"></asp:Label> &nbsp &nbsp
 					<asp:TextBox ID="txtCustomerEmail" runat="server" validationgroup="UpdatePanelReturnAvailabilityValidation"></asp:TextBox>
 					<br />
-
-
 					<asp:Button ID="ReserveSelectedRooms" runat="server" Text="ReserveSelectedRooms" OnClick="ReserveSelectedRooms_Click" validationgroup="UpdatePanelReturnAvailabilityValidation"/>
 					<br />
 					
@@ -161,6 +155,47 @@
 				</ContentTemplate>
 
 			</asp:UpdatePanel> 
+
+			<asp:UpdatePanel ID ="UpdatePanelRetrieveBooking" runat="server">
+				<ContentTemplate>
+					<asp:Label ID="lblRetrieveBookingEmail" runat="server" Text="Email"></asp:Label>
+					&nbsp;&nbsp;<asp:TextBox ID="txtRetrieveBookingEmail" runat="server"></asp:TextBox>
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<asp:Label ID="lblRetrieveBookingID" runat="server" Text="BookingID"></asp:Label>
+					&nbsp;
+					<asp:TextBox ID="txtRetrieveBookingID" runat="server"></asp:TextBox>
+					&nbsp;&nbsp;
+					<asp:Button ID="btnRetrieveBooking" runat="server" Text="Retrieve Booking" OnClick="btnRetrieveBooking_Click" />
+					<p>Reservation information: <br />
+						Guest Name: <asp:Label runat="server" ID="lblRetrieveName"></asp:Label>
+						<br />
+						Guest Country: <asp:Label runat="server" ID ="lblRetrieveCountry"></asp:Label>
+						<br />
+						Guest Phone: <asp:Label runat="server" ID="lblRetrievePhone"></asp:Label>
+						<br />
+						BookingNotes: <asp:Label runat="server" ID="lblRetrieveBookingNotes"></asp:Label>
+						<br />
+					</p>
+					<asp:GridView ID="gvRetrieveBooking" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1">
+						
+						<Columns>
+							<asp:BoundField DataField="BookingID" HeaderText="BookingID" SortExpression="BookingID" />
+							<asp:BoundField DataField="RoomName" HeaderText="RoomName" SortExpression="RoomName" />
+							<asp:BoundField DataField="ReservationDate" DataFormatString="{0:d}" HeaderText="ReservationDate" SortExpression="ReservationDate" />
+							<asp:BoundField DataField="NumberOfGuests" HeaderText="NumberOfGuests" SortExpression="NumberOfGuests" />
+							<asp:BoundField DataField="RoomRate" DataFormatString="{0:c}" HeaderText="RoomRate" SortExpression="RoomRate" />
+						</Columns>
+
+					</asp:GridView>
+					<asp:ObjectDataSource ID="dsRetrieveBooking" runat="server" SelectMethod="RetrieveBookingDetails" TypeName="EllensBnB.EllensCode.BookingElement">
+						<SelectParameters>
+							<asp:FormParameter FormField="txtRetrieveBookingEmail" Name="email" Type="String" />
+							<asp:FormParameter FormField="txtRetrieveBookingID" Name="bookingID" Type="String" />
+						</SelectParameters>
+					</asp:ObjectDataSource>
+				</ContentTemplate>
+
+			</asp:UpdatePanel>
 
 
 		</div>
