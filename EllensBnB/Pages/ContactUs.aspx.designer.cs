@@ -22,6 +22,24 @@ namespace EllensBnB.Pages {
         protected global::System.Web.UI.WebControls.SiteMapPath SiteMapPath1;
         
         /// <summary>
+        /// ScriptManager1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        
+        /// <summary>
+        /// UpdatePanelMainButtons control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanelMainButtons;
+        
+        /// <summary>
         /// MakeNewReservation control.
         /// </summary>
         /// <remarks>
@@ -31,22 +49,13 @@ namespace EllensBnB.Pages {
         protected global::System.Web.UI.WebControls.Button MakeNewReservation;
         
         /// <summary>
-        /// UpdateExistingReservation control.
+        /// RetrieveExistingReservation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button UpdateExistingReservation;
-        
-        /// <summary>
-        /// ScriptManager1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        protected global::System.Web.UI.WebControls.Button RetrieveExistingReservation;
         
         /// <summary>
         /// UpdatePanelCalendar control.
@@ -362,6 +371,15 @@ namespace EllensBnB.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnRetrieveBooking;
+        
+        /// <summary>
+        /// pReservationInformation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl pReservationInformation;
         
         /// <summary>
         /// lblRetrieveName control.

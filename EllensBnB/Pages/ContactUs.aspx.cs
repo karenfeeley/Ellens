@@ -26,18 +26,21 @@ namespace EllensBnB.Pages
             if (!IsPostBack)
             {
                 //this.BindXml();   // 1st version
-               BindXml();          // 2nd version
-            }
+                BindXml();          // 2nd version
+
+				
+			}
+
+			//All update panels not visible to start - appear on button click events
+			UpdatePanelRetrieveBooking.Visible = false;
+			
 			//DropDownListCountries.DataSource = Enum.GetValues(typeof(EllensCode.EnumOfCountries));
 			//UpdatePanelCalendar.Visible = false;
 			//UpdatePanelReturnAvailability.Visible = false;
 			//UpdatePanelRegisterNewCustomer.Visible = false;
 			//UpdatePanelBookingConfirmation.Visible = false;
 
-			lblRetrieveName.Visible = false;
-			lblRetrieveCountry.Visible = false;
-			lblRetrievePhone.Visible = false;
-			lblRetrieveBookingNotes.Visible = false;
+
 
 
 
@@ -71,9 +74,18 @@ namespace EllensBnB.Pages
 
 		}
 
-		protected void UpdateExistingReservation_Click(object sender, EventArgs e)
+		protected void RetrieveExistingReservation_Click(object sender, EventArgs e)
 		{
+			if (IsPostBack)
+			{
+				//make main buttons invisible
+				//RetrieveExistingReservation.Visible = false;
+				//MakeNewReservation.Visible = false;
 
+				UpdatePanelRetrieveBooking.Visible = true;
+				gvRetrieveBooking.Visible = false;
+				pReservationInformation.Visible = false;
+			}
 		}
 
 		//List of dates that gets passed to lstDisplay on Contact
@@ -284,13 +296,11 @@ namespace EllensBnB.Pages
 				lblRetrieveCountry.Text = booking[0].CustomerCountry;
 				lblRetrievePhone.Text = booking[0].CustomerPhone;
 				lblRetrieveBookingNotes.Text = booking[0].BookingNotes;
-				lblRetrieveName.Visible = true;
-				lblRetrieveCountry.Visible = true;
-				lblRetrievePhone.Visible = true;
-				lblRetrieveBookingNotes.Visible = true;
-				gvRetrieveBooking.DataSource = dsRetrieveBooking.Select();
-				gvRetrieveBooking.DataBind();
+				pReservationInformation.Visible = true;				
+				gvRetrieveBooking.Visible = true;
+				//UpdatePanelRetrieveBooking.Update();
 			}
+			UpdatePanelRetrieveBooking.Update();
 
 		}
 	}
