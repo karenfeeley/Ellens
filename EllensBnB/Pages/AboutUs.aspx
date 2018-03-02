@@ -42,19 +42,7 @@
 	</div>	<!--end of left column-->
 	<div role="complementary" id="rightcol">
 		<aside>
-			<!--
-			<form method="get">
-				<fieldset class="booking">
-					<legend class="booking">Booking form</legend>
-					<label for="myDate1">Checkin</label>
-					<input required class="booking" type="date" name="myDate1" id="myDate1"><br>
-					<label for="myDate2">Checkout</label>
-					<input required class="booking" type="date" name="myDate2" id="myDate2"><br>
-					<label class="booking" for="email"><span>*</span>E-mail:</label>
-					<input required class="booking" type="email" id="email" name="email" placeholder="Your email...">
-					<input class="booking" type="submit" onclick="CheckDate()" value ="send"><input class="booking" type="reset">
-				</fieldset>
-			</form> -->
+			
 			<h3><em>Recent Reviews</em></h3>
 			<h5>Duncan - London</h5>
 			<p>

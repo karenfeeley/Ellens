@@ -67,19 +67,7 @@
 	
 	<div role="complementary" id="rightcol">
 		<aside class="direction">
-			<!--
-			<form method="get">
-				<fieldset class="booking">
-					<legend>Booking form</legend>
-					<label for="myDate1">Checkin</label>
-					<input required class="booking" type="date" name="myDate1" id="myDate1"><br>
-					<label for="myDate2">Checkout</label>
-					<input required class="booking" type="date" name="myDate2" id="myDate2"><br>
-					<label class="booking" for="email"><span>*</span>E-mail:</label>
-					<input required class="booking" type="email" id="email" name="email" placeholder="Your email...">
-					<input class="booking" type="submit" onclick="CheckDate()" value ="send"> <input class="booking" type="reset">
-				</fieldset>
-			</form> -->
+			
 			<h3><em>Latitude, Longitude</em></h3>
 			<p>(53.277232, -9.048089)</p>
 			<h3>By Car</h3>

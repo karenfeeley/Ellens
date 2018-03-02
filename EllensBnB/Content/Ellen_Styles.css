@@ -119,8 +119,9 @@ main { display: block; /* for Internet Explorer version 10 and below */
 	Discuss with Karen - does this need to be removed
 */										
 	  
-/*skip to maincontent styles*/	  
-#skiptocontent a {
+/*skip to maincontent styles*/	 
+/*TODO delete skipContent styles*/
+/*#skiptocontent a {
 	padding:6px;
 	position: absolute;
 	top:-40px;
@@ -143,7 +144,7 @@ main { display: block; /* for Internet Explorer version 10 and below */
 	outline:0;	
 	-webkit-transition: top .1s ease-in, background .5s linear;
     transition: top .1s ease-in, background .5s linear;
-}
+}*/
 	
 /*Scrolling top button styles*/	
 #topBtn {
@@ -163,7 +164,7 @@ main { display: block; /* for Internet Explorer version 10 and below */
 		box-shadow:1px 1px 1px #000066;
 }
 
-#topBtn:hover,input[type=reset]:hover, input[type=submit]:hover {background-color: #ccf2ff;
+#topBtn:hover {background-color: #ccf2ff;
 }	  
 
 
@@ -399,35 +400,39 @@ thead	{background-color:#003399;
 	
 /*Contact Us - Form styles*/	
 
-fieldset		{Margin-top:20px;
+/*fieldset		{Margin-top:20px;
 				max-width:650px;
-				width:50%}
-legend			{font-size:100%;
-				}
+				width:50%}*/
+
+
+/*legend			{font-size:100%;
+				}*/
 label.field		{text-align:left;
 				max-width:100px;
 				width:50%;
 				float:left;
 				font-size:small;}
-input:required[type=text],input[type=text],input:required[type=email],input:required[type=tel],input:required[type=range],
+
+/*TODO delete input required styles*/
+/*input:required[type=text],input[type=text],input:required[type=email],input:required[type=tel],input:required[type=range],
 input[type=date],select, textarea 
 	{max-width: 500px; 
 	padding: 5px; 
-    border: 1px solid #4d88ff; /* blue border */
-    border-radius: 4px; /* Rounded borders */
+    border: 1px solid #4d88ff; 
+    border-radius: 4px; 
     margin-top: 1px; 
     margin-bottom: 1px; 
-	resize: vertical
+	resize: vertical*/
 }	/* Allow the user to vertically resize the textarea (not horizontally) */
 
 	
-Input[type=range].range {max-width:400px;width:50%;padding:5px 10px 5px 10px;}
-Input[type=range] p {margin:10px}
+/*Input[type=range].range {max-width:400px;width:50%;padding:5px 10px 5px 10px;}
+Input[type=range] p {margin:10px}*/
 
 label span, .required{color:red;}
-fieldset p {clear:both;}
+/*fieldset p {clear:both;}*/
 
-input[type=submit] {
+/*input[type=submit] {
     background-color: #4d88ff;
     color: white;
     padding: 12px 12px;
@@ -437,8 +442,8 @@ input[type=submit] {
 	font-size:50%;
 	border: 1px solid #ffffff;
 	box-shadow:1px 1px 1px #000066;
-}
-input[type=reset] {
+}*/
+/*input[type=reset] {
     background-color: #4d88ff;
     color: white;
     padding: 12px 12px;
@@ -447,23 +452,23 @@ input[type=reset] {
 	cursor: pointer;
 	border: 1px solid #ffffff;
 	box-shadow:1px 1px 1px #000066;
-	}
+	}*/
 	
 /*Booking form styles*/
-fieldset.booking	{Margin-top:0px;
+/*fieldset.booking	{Margin-top:0px;
 					width:100%;
 					width:100%;
 					padding:5px;}
-legend.booking		{font-size:100%;}
+legend.booking		{font-size:100%;}*/
 label.booking	{text-align:left;
 				float:left;
 				font-weight:bold;}
-fieldset p {clear:both;}
+/*fieldset p {clear:both;}*/
 
-input:required.booking[type=date],input:required.booking[type=email],input[type=search]
+/*input:required.booking[type=date],input:required.booking[type=email],input[type=search]
 	{width:90%;				
 	padding: 3px; 
-	border: 1px solid #4d88ff; /* blue border */
+	border: 1px solid #4d88ff; 
 	border-radius: 4px; 
 	margin: 1px 0px 0px 1px; 
 	 }
@@ -490,9 +495,9 @@ input.booking[type=reset] {
 	}
 input.search[type=search] {	width:70%;
 							padding:4px;
-							margin: 30px 0px 10px 30px;}
+							margin: 30px 0px 10px 30px;}*/
 
-input.search[type=submit] {	 background-color: #4d88ff;
+/*input[type=submit] {	 background-color: #4d88ff;
 							color: white;
 							padding: 4px 4px;
 							font-size:75%;
@@ -500,7 +505,7 @@ input.search[type=submit] {	 background-color: #4d88ff;
 							cursor: pointer;
 							margin:0px 5px 0px 10px;
 							border: 1px solid #ffffff;
-							box-shadow:1px 1px 1px #000066;}
+							box-shadow:1px 1px 1px #000066;}*/
 
 
 
@@ -541,12 +546,12 @@ input.search[type=submit] {	 background-color: #4d88ff;
  .slideshow-container {max-height:300px;
 						height:100%;
 						 }
-fieldset.booking	{width:100%;}
-legend.booking		{font-size:130%;}
-input:required.booking[type=date],input:required.booking[type=email],input[type=search]
+/*fieldset.booking	{width:100%;}
+legend.booking		{font-size:130%;}*/
+/*input:required.booking[type=date],input:required.booking[type=email],input[type=search]
 				{
 				width:100%;				
-				 }
+				 }*/
 aside	{max-width:270px;
 		width:90%;
 		}
@@ -554,17 +559,17 @@ aside	{max-width:270px;
 			}
 #leftcol	{width:70%;
 			}
-fieldset		{width:100%}
+/*fieldset		{width:100%}
 legend			{font-size:150%;
-				}
+				}*/
 label.field		{width:100%;
 				}
-input:required[type=text],input[type=text],input:required[type=email],input:required[type=tel],input:required[type=range],
+/*input:required[type=text],input[type=text],input:required[type=email],input:required[type=tel],input:required[type=range],
 input[type=date],select, textarea 
 	{width:100%;
-   }	
-Input[type=range].range {width:100%;}
-input[type=submit],input[type=reset]{font-size:100%;}
+   }	*/
+/*Input[type=range].range {width:100%;}*/
+/*input[type=submit],input[type=reset]{font-size:100%;}*/
     
 label.field	{font-weight:bold;
 			width:100%;
@@ -580,5 +585,65 @@ label.field	{font-weight:bold;
     float: left;
     position: relative;
     
+    
+}
+input[type=submit] {
+    background-color: #4d88ff;
+    color: white;
+    padding: 6px 6px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px 5px 5px 0px;
+    font-size: 100%;
+    border: 1px solid #ffffff;
+    box-shadow: 1px 1px 1px #000066;
+}
+
+
+
+ #ReportsPage {
+ margin: 10px 5px 5px 20px;
+}
+ #ReportsPage p
+ {
+    font-size:18px;
+    
+ }
+.overflow
+{
+overflow-x:scroll;
+overflow-y:hidden;
+width:100%;
+}
+
+
+
+.cssPager span  {
+    background-color: #4d88ff;
+    font-size: 15px;
+}
+
+.cssPager td {
+   
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.cssDropdown {
+    position: relative;
+    display: inline-block;
+    padding: 5px;
+    border: 1px solid #4d88ff;
+    border-radius: 4px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    width: 200px;
+}
+.cssdropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 8px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
     
 }
