@@ -176,17 +176,8 @@
 						BookingNotes: <asp:Label runat="server" ID="lblRetrieveBookingNotes"></asp:Label>
 						<br />
 					</p>
-					<asp:GridView ID="gvRetrieveBooking" runat="server" AutoGenerateColumns="False" 
-						DataSourceID="dsRetrieveBooking">
+					<asp:GridView ID="gvRetrieveBooking" runat="server" AutoGenerateColumns="False">
 						
-						<Columns>
-							<asp:BoundField DataField="BookingID" HeaderText="BookingID" SortExpression="BookingID" />
-							<asp:BoundField DataField="RoomName" HeaderText="RoomName" SortExpression="RoomName" />
-							<asp:BoundField DataField="ReservationDate" DataFormatString="{0:d}" HeaderText="ReservationDate" SortExpression="ReservationDate" />
-							<asp:BoundField DataField="NumberOfGuests" HeaderText="NumberOfGuests" SortExpression="NumberOfGuests" />
-							<asp:BoundField DataField="RoomRate" DataFormatString="{0:c}" HeaderText="RoomRate" SortExpression="RoomRate" />
-						</Columns>
-
 					</asp:GridView>
 					<asp:ObjectDataSource ID="dsRetrieveBooking" runat="server" SelectMethod="RetrieveBookingDetails" TypeName="EllensBnB.EllensCode.BookingElement">
 						<SelectParameters>

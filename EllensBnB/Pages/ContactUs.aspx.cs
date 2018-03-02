@@ -33,12 +33,18 @@ namespace EllensBnB.Pages
 			//UpdatePanelReturnAvailability.Visible = false;
 			//UpdatePanelRegisterNewCustomer.Visible = false;
 			//UpdatePanelBookingConfirmation.Visible = false;
-			
 
-        }
+			lblRetrieveName.Visible = false;
+			lblRetrieveCountry.Visible = false;
+			lblRetrievePhone.Visible = false;
+			lblRetrieveBookingNotes.Visible = false;
 
 
-        private void BindXml()
+
+		}
+
+
+		private void BindXml()
         {
             //string filePath = Server.MapPath(@"..\countries.xml");
             //using (DataSet ds = new DataSet())
@@ -265,21 +271,26 @@ namespace EllensBnB.Pages
 
 		protected void btnRetrieveBooking_Click(object sender, EventArgs e)
 		{
-			lblRetrieveName.Visible = false;
-			lblRetrieveCountry.Visible = false;
-			lblRetrievePhone.Visible = false;
-			lblRetrieveBookingNotes.Visible = false;
-			string email = txtRetrieveBookingEmail.Text;
-			string id = txtRetrieveBookingID.Text;
-			List<BookingElement> booking = BookingElement.RetrieveBookingDetails(email, id);
-			lblRetrieveName.Text = booking[0].CustomerName;
-			lblRetrieveCountry.Text = booking[0].CustomerCountry;
-			lblRetrievePhone.Text = booking[0].CustomerPhone;
-			lblRetrieveBookingNotes.Text = booking[0].BookingNotes;
-			lblRetrieveName.Visible = true;
-			lblRetrieveCountry.Visible = true;
-			lblRetrievePhone.Visible = true;
-			lblRetrieveBookingNotes.Visible = true;
+			if (IsPostBack)
+			{
+				lblRetrieveName.Visible = false;
+				lblRetrieveCountry.Visible = false;
+				lblRetrievePhone.Visible = false;
+				lblRetrieveBookingNotes.Visible = false;
+				string email = txtRetrieveBookingEmail.Text;
+				string id = txtRetrieveBookingID.Text;
+				List<BookingElement> booking = BookingElement.RetrieveBookingDetails(email, id);
+				lblRetrieveName.Text = booking[0].CustomerName;
+				lblRetrieveCountry.Text = booking[0].CustomerCountry;
+				lblRetrievePhone.Text = booking[0].CustomerPhone;
+				lblRetrieveBookingNotes.Text = booking[0].BookingNotes;
+				lblRetrieveName.Visible = true;
+				lblRetrieveCountry.Visible = true;
+				lblRetrievePhone.Visible = true;
+				lblRetrieveBookingNotes.Visible = true;
+				gvRetrieveBooking.DataSource = dsRetrieveBooking.Select();
+				gvRetrieveBooking.DataBind();
+			}
 
 		}
 	}
