@@ -330,13 +330,6 @@ namespace EllensBnB.EllensCode
 		//calls uspRetrieveExistingBooking
 		public static List<BookingElement> RetrieveExistingBooking(string email, int bookingID)
 		{
-			if (String.IsNullOrEmpty(email) || bookingID == 0)
-			{
-				List<BookingElement> empty = new List<BookingElement>();
-				return empty;
-			}
-			else
-			{
 				SqlConnection dbConnection = new SqlConnection(connectionString);
 				SqlCommand cmdRetrieveExistingBooking = new SqlCommand("uspRetrieveExistingBooking", dbConnection);
 				cmdRetrieveExistingBooking.CommandType = CommandType.StoredProcedure;
@@ -385,7 +378,7 @@ namespace EllensBnB.EllensCode
 					dbConnection.Close();
 				}
 				return existingBooking;
-			}
+			
 		}
 
 		//call uspGetRoomTableData
